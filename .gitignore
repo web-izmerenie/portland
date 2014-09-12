@@ -20,6 +20,7 @@ test.php
 bitrix/cache
 bitrix/managed_cache
 bitrix/tmp
+bitrix/stack_cache
 
 # configs (security)
 bitrix/.settings.php
