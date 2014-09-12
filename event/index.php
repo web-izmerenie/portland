@@ -1,0 +1,3 @@
+<?
+header('Location: /event/board/');
+?>

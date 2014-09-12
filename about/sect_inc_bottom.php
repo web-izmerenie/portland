@@ -1,0 +1,2 @@
+<div class="page-main-footer-item">Посетив наш ресторан лишь однажды, вы захотите прийти к нам еще, за новой</div>
+					  <div class="page-main-footer-item page-main-footer-item--large">Большой порцией удовольствий!</div>
