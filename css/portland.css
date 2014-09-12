@@ -294,7 +294,6 @@ body {
   bottom: 0;
   display: block;
   width: 80px;
-  overflow: hidden; /* fixing logo out of header when mouse over */
   background: #231f20 url("../i/menu_bg.png") repeat 0 0;
   -webkit-transition: width 0.2s ease-in;
   -moz-transition: width 0.2s ease-in;
