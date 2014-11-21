@@ -23,8 +23,7 @@ bitrix/tmp
 bitrix/stack_cache
 
 # configs (security)
-bitrix/.settings.php
-bitrix/php_interface/dbconn.php
+dbconfig.php
 bitrix/license_key.php
 
 # backups
