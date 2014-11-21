@@ -22,6 +22,9 @@ bitrix/managed_cache
 bitrix/tmp
 bitrix/stack_cache
 
+.source_of_symbolic_links
+#SYMBOLIC_LINKS_START#
+
 # configs (security)
 dbconfig.php
 bitrix/license_key.php
