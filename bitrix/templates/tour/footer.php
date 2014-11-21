@@ -1,6 +1,4 @@
-﻿			</div>
-		  </div>
-        </div>
+﻿			</div>		  
       </main>
     </div>
     <footer itemscope itemtype="http://schema.org/WPFooter" class="page-footer">
@@ -105,7 +103,7 @@
 			'SITE_UPLOAD_PATH': '/dummy', });</script>
 	<!--//JS settings-->
 	<!--Scripts-->
-	<script type="text/javascript" src="/js/portland.methods.js"></script>
+	<script type="text/javascript" src="/js/portland.methods.js?v=1"></script>
 	<!--//Sripts-->
   </body>
 </html>

@@ -8,7 +8,7 @@
         <!--Meta-->
         <meta charset="UTF-8"/>
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
-        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <meta name="viewport" content="width=device-width" />
         <link rel="dns-prefetch" href="//cdnjs.cloudflare.com"/>
         <title><?$APPLICATION->ShowTitle()?></title>
         <meta name="keywords" content="<?$APPLICATION->ShowProperty("keywords")?>"/>
@@ -55,13 +55,14 @@
     </head>
     <body itemscope itemtype="http://schema.org/WebPage" class="reviews-page">
         <?$APPLICATION->ShowPanel();?>
-        <div style="background-image: url()" class="page">
+        <div style="<?$APPLICATION->ShowProperty("page_styles")?>" class="page">
             <header itemscope itemtype="http://schema.org/WebPage" id="page-header" class="page-header">
                 <div class="page-header-inner">
                     <!--Logo-->
                     <div class="page-header-logo">
 						<?if($APPLICATION->GetCurDir() != '/'){?><a href="/"><?}?>
-							<img src="/i/logo.png" alt="Арт-шоу ресторан Portland" width="142" height="98" class="page-header-logo-image"/>
+							<img src="/i/logo_small.png" alt="Арт-шоу ресторан Portland" width="26" height="35" class="page-header-logo-image page-header-logo-image--small"/>
+							<img src="/i/logo.png" alt="Арт-шоу ресторан Portland" width="142" height="98" class="page-header-logo-image page-header-logo-image--large"/>
 						<?if($APPLICATION->GetCurDir() != '/'){?></a><?}?>
 					</div>
                     <!--//Logo--><span id="page-header-toggler" class="page-header-toggler"><span class="page-header-toggler-inner list-icon-inner">Открыть меню</span></span>
@@ -135,6 +136,6 @@
 					<div class="page-main-holder">
 					  <div class="page-main-content">
 						<div class="page-main-heading">
-						  <h1 class="page-main-heading-name"><?$APPLICATION->ShowTitle(false)?></h1>
+						  <h1 class="page-main-heading-name" style="<?$APPLICATION->ShowProperty("h1_styles")?>"><?$APPLICATION->ShowTitle(false)?></h1>
 						</div>
 						<div class="page-text page-text--indent">						  

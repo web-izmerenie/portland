@@ -44,8 +44,8 @@ $arOrder = array(
 );
 $arFilter = array(
 	'ACTIVE' => "Y",
-	'>DATE_ACTIVE_FROM' => $SUBSCRIBE_TEMPLATE_RUBRIC["START_TIME"],
-	'<=DATE_ACTIVE_FROM' => $SUBSCRIBE_TEMPLATE_RUBRIC["END_TIME"],
+	'>DATE_ACTIVE_FROM' => date('d.m.Y H:i:s', strtotime($SUBSCRIBE_TEMPLATE_RUBRIC["START_TIME"]) + 60 * 60 * 24),
+	'<=DATE_ACTIVE_FROM' => date('d.m.Y H:i:s', strtotime($SUBSCRIBE_TEMPLATE_RUBRIC["END_TIME"]) + 60 * 60 * 24),
     '>PROPERTY_TO_SUBSCRIBE' => '1',
 );
 $arSelect = array(

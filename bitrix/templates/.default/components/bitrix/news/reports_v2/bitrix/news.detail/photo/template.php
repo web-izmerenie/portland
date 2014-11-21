@@ -17,7 +17,7 @@ if($arResult["DETAIL_PICTURE"]["SRC"]){
   <div class="page-main">
 	<div class="page-inner">
 	  <div class="page-main-holder">		
-		<?if($arResult['DISPLAY_PROPERTIES']['PHOTO']['VALUE'] || $arResult['DISPLAY_PROPERTIES']['VIDEO']['VALUE']){?>
+		<?if(is_array($arResult['DISPLAY_PROPERTIES']['PHOTO_LIST']['VALUE']) || $arResult['DISPLAY_PROPERTIES']['VIDEO']['VALUE']){?>
 			<?			
 			if($arResult['DISPLAY_PROPERTIES']['PHOTO']['VALUE']){
 				$arIblockIDs[] = 9;
@@ -60,7 +60,7 @@ if($arResult["DETAIL_PICTURE"]["SRC"]){
 					?>
 					<?
 					$arPhotoPreview = CFile::ResizeImageGet($arPhoto['VALUE'], array('width'=>130, 'height'=>130), BX_RESIZE_IMAGE_EXACT, true);
-					$arPhotoDetail = CFile::ResizeImageGet($arPhoto['VALUE'], array('width'=>633, 'height'=>423), BX_RESIZE_IMAGE_EXACT, true);
+					$arPhotoDetail = CFile::ResizeImageGet($arPhoto['VALUE'], array('width'=>633, 'height'=>423), BX_RESIZE_IMAGE_PROPORTIONAL, true);
 					?>
 					<?if($arPhoto['CODE'] == 'VIDEO_LIST'){?>		
 						<a href="<?=$arPhoto['URL']?>" data-caption="<?=$arPhoto['DESCRIPTION']?>" class="event-page-item event-page-item--video"><img src="<?=$arPhotoDetail['src']?>" alt="<?=$arItem['DESCRIPTION']?>" class="event-page-album-item-photo"></a>

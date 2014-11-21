@@ -26,7 +26,7 @@ if($arResult["DETAIL_PICTURE"]["SRC"]){
   <div class="page-main">
 	<div class="page-inner">
 	  <div class="page-main-holder">		
-		<?if($arResult['DISPLAY_PROPERTIES']['PHOTO']['VALUE'] || $arResult['DISPLAY_PROPERTIES']['VIDEO']['VALUE']){?>
+		<?if($arResult['DISPLAY_PROPERTIES']['PHOTO_LIST']['VALUE'] || $arResult['DISPLAY_PROPERTIES']['VIDEO']['VALUE']){?>
 			<?			
 			if($arResult['DISPLAY_PROPERTIES']['PHOTO']['VALUE']){
 				$arIblockIDs[] = 9;
@@ -69,11 +69,11 @@ if($arResult["DETAIL_PICTURE"]["SRC"]){
 			foreach($arResult['DISPLAY_PROPERTIES']['PHOTO_LIST']['VALUE'] as $key=>$arPhotoItem){
 				$i++;
 				$arPhoto[$i] = array('VALUE'=>$arPhotoItem, 'DESCRIPTION'=>$arResult['DISPLAY_PROPERTIES']['PHOTO_LIST']['DESCRIPTION'][$key], 'CODE'=>'PHOTO_LIST', 'n'=>$i);
-			}					
+			}	
 			$dbPhoto = new CDBResult;
 			$dbPhoto->InitFromArray($arPhoto);
 			unset($arPhoto);
-			$dbPhoto->NavStart(5);
+			$dbPhoto->NavStart(10);
 			while($arPhoto = $dbPhoto->Fetch()){
 				?>
 				<?				

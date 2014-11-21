@@ -20,11 +20,11 @@ $arBasketItems = AICatalog::GetBasketItems();
 foreach($arResult['ITEMS'] as $arItem){
 	?>
 	<?
-	$arPhoto = CFile::ResizeImageGet($arItem["DETAIL_PICTURE"]["ID"], array('width'=>360, 'height'=>240), BX_RESIZE_IMAGE_EXACT, true);
+	$arPhoto = CFile::ResizeImageGet($arItem["DETAIL_PICTURE"]["ID"], array('width'=>341, 'height'=>226), BX_RESIZE_IMAGE_EXACT, true);
 	?>
 	<div itemscope itemtype="http://schema.org/Product" class="menu-item">
 		<div class="menu-item-inner">
-		  <div class="menu-item-photo-holder"><img src="<?=$arPhoto['src']?>" alt="<?=$arItem['NAME']?>" itemprop="image" width="360" height="240" class="menu-item-photo">
+		  <div class="menu-item-photo-holder"><img src="<?=$arPhoto['src']?>" alt="<?=$arItem['NAME']?>" itemprop="image" width="341" height="226" class="menu-item-photo">
 			<div class="menu-item-actions">
 			  <div class="menu-item-actions-holder"><!--noindex-->
 				<div class="menu-item-action-item-holder">					

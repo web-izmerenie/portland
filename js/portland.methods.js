@@ -89,6 +89,7 @@ app.methods.content = (function() {
 				paginationSpeed: 700,
 				pagination: false,
 				autoPlay: 5000,
+				transitionStyle : "fade",
 				navigationText: [
 					'<span class="transition-icon transition-icon--arrows transition-icon--arrows--left transition-icon--arrows--horizontal larrow-gold-icon-before larrow-red-icon-after"></span>',
 					'<span class="transition-icon transition-icon--arrows transition-icon--arrows--right transition-icon--arrows--horizontal rarrow-gold-icon-before rarrow-red-icon-after"></span>'
@@ -169,31 +170,103 @@ app.methods.content = (function() {
 
 			var $menu = $("#page-header"),
 				$menuToggler = $("#page-header-toggler")
-				menuScroll = true;
+				menuScroll = true,
 
-			$("html").on("click", function() {
-				if($menu.hasClass("page-header--opened")) {
-					$menu.removeClass("page-header--opened")
-				}
-			});
+				curOpenSubmenu = false,
+				subMenuOpenTimer = false,
+				curCloseSubmenu = false,
+				subMenuCloseTimer = false,
+				subMenuOpened = false,
 
-			$menu.on("mouseover", function() {
+				menuCloseTimer = false;
+
+			// Открытие главного меню
+			$menu.on("mouseenter", function() {
 				$menu.addClass("page-header--opened");
 			});
 
-			$menu.on("mouseout", function() {
+			$menu.on("mouseleave", function() {
+				if(subMenuCloseTimer && subMenuOpened) {
+					curOpenSubmenu.removeClass("page-header-menu-sub--opened page-header-menu-sub--top--opened");
+					clearTimeout(subMenuCloseTimer);
+					subMenuOpened = false;
+				}
 				$menu.removeClass("page-header--opened");
 			});
+			// //
 
-			$menu.on("click", function(e) {
-				e.stopPropagation();
+			// Установка ID для каждого под-меню
+			$menu.find(".page-header-menu-sub").each(function(i) {
+
+				$(this).data("index", "s" + i);
 			});
 
-			$menuToggler.on("click", function() {
-				$menu.toggleClass("page-header--opened");
+			// Обработка события наведения на область меню
+			$menu.find(".page-header-menu-item-holder--submenu").on("mouseenter", function() {
 
-				return false;
+
+				var $item = $(this),
+					$subMenu = $item.find(".page-header-menu-sub"),
+					addClass = 'page-header-menu-sub';
+
+				// Провекра на уже существующий таймер открытия
+				if(subMenuOpenTimer) {
+					clearTimeout(subMenuOpenTimer);
+				}
+
+				// Если должно открыться тоже самое, что сейчас закрывается, то стопаримся
+				if(subMenuOpened && subMenuCloseTimer && subMenuOpened == $subMenu.data("index")) {
+					clearTimeout(subMenuCloseTimer);
+					return false;
+				}
+
+				// Октрываем под-меню
+				subMenuOpenTimer = setTimeout(function() {
+					addClass += $subMenu.hasClass("page-header-menu-sub--top") ? '--top--opened' : '--opened';
+					$subMenu.addClass(addClass);
+					// Текущее открытое под-меню
+					subMenuOpened = $subMenu.data("index");
+					curOpenSubmenu = $subMenu;
+				}, 0);
+
 			});
+
+
+
+			// Обработка события покидания области навежения пункта
+			$menu.find(".page-header-menu-item-holder--submenu").on("mouseleave", function() {
+
+				var $item = $(this),
+					$subMenu = $item.find(".page-header-menu-sub"),
+					rmClass = 'page-header-menu-sub';
+				
+
+				// Если откуда мы уходим и есть открытое меню, то закрываем его
+				if(subMenuOpened && $subMenu.data("index") == subMenuOpened) {
+					// Скрытие под-меню
+					subMenuCloseTimer = setTimeout(function() {
+						rmClass += $subMenu.hasClass("page-header-menu-sub--top") ? '--top--opened' : '--opened';
+
+
+						$subMenu.removeClass(rmClass);
+						curCloseSubmenu = false;
+						subMenuOpened = false;
+					}, 0);
+				}
+
+
+			});
+
+			$menu.find(".page-header-menu-sub").on("mouseenter", function() {
+				var $subMenu = $(this);
+
+				// Если вернулись в область подменю
+				if(subMenuCloseTimer && $subMenu.data("index") == subMenuOpened) {
+					clearTimeout(subMenuCloseTimer);
+				}
+			});
+
+			// //
 			function closeMenuOnScroll() {
 				if(menuScroll) {
 					$menu.removeClass("page-header--opened");
@@ -201,9 +274,19 @@ app.methods.content = (function() {
 					$(window).off("scroll", closeMenuOnScroll)
 				}
 			}
+
 			if(!$menu.find(".page-header-menu-item--current").length) {
-				$menu.addClass("page-header--opened");
+				//$menu.addClass("page-header--opened");
+
 				$(window).on("scroll", closeMenuOnScroll);				
+
+
+
+
+
+
+
+
 			}
 
 		},
@@ -291,14 +374,31 @@ app.methods.content = (function() {
 		initTour: function() {
 
 			// Hide tour info
-			$(".tour-info").on("click", ".tour-info-hide", function() {
+			/*$(".tour-info").on("click", ".tour-info-hide", function() {
 				$(this).closest(".tour-info").removeClass("tour-info--active")
-			});
+			});*/
 
 			// Show tour info
-			$(".tour-info").on("click", ".tour-info-show", function() {
+			/*$(".tour-info").on("click", ".tour-info-show", function() {
 				$(this).closest(".tour-info").addClass("tour-info--active")
+			});*/
+			function recalcSizesTour(){
+				var tour_height = parseInt($('.page').height()) - parseInt($('footer').height());
+				var tour_width = parseInt($('.page-tour').width());
+				if(tour_height < 680){
+					tour_height = 680;
+				}
+				$('#touriframe').height(tour_height).width(tour_width);
+			}
+			
+
+			$(window).resize(function() {
+				setTimeout(function() {
+					recalcSizesTour();					
+				}, 50);
 			});
+
+			recalcSizesTour();
 
 		},
 
@@ -420,17 +520,17 @@ app.methods.content = (function() {
 					$menuHolder.isotope("layout");
 				}, 50);
 			});
-
-			recalcSizes();
-			$menuHolder.isotope({
-				itemsSelector: ".menu-item",
-				masonry: {
-					columnWidth: ".grid-sizer"
-				}
-			});
-			$menuHolder.isotope("unbindResize");
-			$menuHolder.isotope("layout");
-
+			$(window).load(function() {
+				recalcSizes();
+				$menuHolder.isotope({
+					itemsSelector: ".menu-item",
+					masonry: {
+						columnWidth: ".grid-sizer"
+					}
+				});
+				$menuHolder.isotope("unbindResize");
+				$menuHolder.isotope("layout");
+			})
 		},
 
 		initCustomSocial: function() {
@@ -605,16 +705,17 @@ app.methods.content = (function() {
 				        "featureType": "water",
 				        "stylers": [
 				            {
-				                "hue": "#528c99"
-				            },
-				            {
-				                "gamma": 1.25
-				            },
-				            {
-				                "saturation": -22
-				            },
-				            {
-				                "lightness": -31
+
+
+
+
+
+
+
+
+
+
+				                "color": "#528c99"
 				            }
 				        ]
 				    }
@@ -629,6 +730,19 @@ app.methods.content = (function() {
 				icon: marker
 			});
 
+
+			function setMapHeight() {
+				var wh = $(window).height();
+				$mapContainer.height(wh - 70);
+				googleMap.setCenter(new google.maps.LatLng(lat - 0.0015, lng));
+			}
+
+			setMapHeight();
+			$(window).on("resize", function() {
+				setTimeout(function() {
+					setMapHeight();
+				}, 50);
+			});
 		},
 
 		updateBasket: function($spinner) {

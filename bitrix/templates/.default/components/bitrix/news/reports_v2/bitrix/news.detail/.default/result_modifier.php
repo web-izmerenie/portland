@@ -1,8 +1,8 @@
 <?
 // сортировку берем из параметров компонента
 $arSort = array(
-		$arParams["SORT_BY1"]=>$arParams["SORT_ORDER1"],
-		$arParams["SORT_BY2"]=>$arParams["SORT_ORDER2"],
+		'ACTIVE_FROM'=>'DESC',
+		'NAME'=>'ASC'
 	);
 // выбрать нужно id элемента, его имя и ссылку. Можно добавить любые другие поля, например PREVIEW_PICTURE или PREVIEW_TEXT
 $arSelect = array(

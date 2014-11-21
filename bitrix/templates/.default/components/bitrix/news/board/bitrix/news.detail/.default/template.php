@@ -21,7 +21,7 @@ if($arResult["DETAIL_PICTURE"]["SRC"]){
 	  </div>
 	  <div class="event-page-heading-back justify-item justify-item--middle"><a href="<?=$arResult['LIST_PAGE_URL']?>" class="custom-back-link custom-back-link--orange custom-back-link--uppercase custom-back-link--large"><span class="custom-back-link-name">Вернуться к списку</span></a></div>
 	</div>
-	<h1 itemprop="name" class="event-page-heading-name"><span class="event-page-heading-name-main"><?=$arResult["NAME"]?> </span><span class="event-page-heading-name-minor"><?=$arResult["DISPLAY_PROPERTIES"]['ADV']['VALUE']?></span></h1>
+	<h1 itemprop="name" class="event-page-heading-name"><span class="event-page-heading-name-main"><?=str_replace(',',',<br>',$arResult["NAME"])?> </span><span class="event-page-heading-name-minor"><?=$arResult["DISPLAY_PROPERTIES"]['ADV']['VALUE']?></span></h1>
   </div>
   <div class="page-main">
 	<div class="page-inner">
