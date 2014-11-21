@@ -1,6 +1,12 @@
 <?
 $arUrlRewrite = array(
 	array(
+		"CONDITION" => "#^/robots.txt(\\?|\$)#",
+		"RULE" => "",
+		"ID" => "",
+		"PATH" => "/robots.php",
+	),
+	array(
 		"CONDITION" => "#^/event/report/#",
 		"RULE" => "",
 		"ID" => "bitrix:news",
