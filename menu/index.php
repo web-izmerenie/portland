@@ -1,3 +1,3 @@
 <?
-header('Location: /event/board/');
+header('Location: /catalog/7/');
 ?>
