@@ -4003,6 +4003,7 @@ body {
   -o-transition: background-color 0.2s ease-in;
   -ms-transition: background-color 0.2s ease-in;
   transition: background-color 0.2s ease-in;
+  height: 515px;
 }
 .board .board-item .board-item-inner .board-item-photo-holder {
   position: relative;
