@@ -131,18 +131,75 @@
 		);?>
       </header>
       <main itemscope itemprop="mainContentOfPage" class="page-content">
+        <div class="page-heading">
+				  <div class="page-heading-inner">
+					<ul itemprop="breadcrumb" class="page-heading-breadcrumbs page-heading-breadcrumbs--small"><li class="page-heading-breadcrumb-item page-heading-breadcrumb-item--active"><span style="font-size:90px;text-transform:none;" class="page-heading-breadcrumb-item-name">Караоке</span></li></ul></div>
+					<?$APPLICATION->IncludeComponent(
+                        "bitrix:news.list",
+                        "slider_about",
+                        Array(
+                            "IBLOCK_TYPE" => "about",
+                            "IBLOCK_ID" => "16",
+                            "NEWS_COUNT" => "",
+                            "SORT_BY1" => "SORT",
+                            "SORT_ORDER1" => "",
+                            "SORT_BY2" => "ID",
+                            "SORT_ORDER2" => "",
+                            "FILTER_NAME" => "",
+                            "FIELD_CODE" => array("ID", "NAME", "PREVIEW_PICTURE", ""),
+                            "PROPERTY_CODE" => array("", ""),
+                            "CHECK_DATES" => "Y",
+                            "DETAIL_URL" => "",
+                            "AJAX_MODE" => "N",
+                            "AJAX_OPTION_JUMP" => "N",
+                            "AJAX_OPTION_STYLE" => "N",
+                            "AJAX_OPTION_HISTORY" => "N",
+                            "CACHE_TYPE" => "A",
+                            "CACHE_TIME" => "36000000",
+                            "CACHE_FILTER" => "N",
+                            "CACHE_GROUPS" => "Y",
+                            "PREVIEW_TRUNCATE_LEN" => "",
+                            "ACTIVE_DATE_FORMAT" => "",
+                            "SET_STATUS_404" => "N",
+                            "SET_TITLE" => "N",
+                            "INCLUDE_IBLOCK_INTO_CHAIN" => "N",
+                            "ADD_SECTIONS_CHAIN" => "N",
+                            "HIDE_LINK_WHEN_NO_DETAIL" => "N",
+                            "PARENT_SECTION" => "",
+                            "PARENT_SECTION_CODE" => "",
+                            "INCLUDE_SUBSECTIONS" => "N",
+                            "DISPLAY_DATE" => "Y",
+                            "DISPLAY_NAME" => "Y",
+                            "DISPLAY_PICTURE" => "Y",
+                            "DISPLAY_PREVIEW_TEXT" => "N",
+                            "PAGER_TEMPLATE" => "",
+                            "DISPLAY_TOP_PAGER" => "N",
+                            "DISPLAY_BOTTOM_PAGER" => "N",
+                            "PAGER_TITLE" => "",
+                            "PAGER_SHOW_ALWAYS" => "N",
+                            "PAGER_DESC_NUMBERING" => "N",
+                            "PAGER_DESC_NUMBERING_CACHE_TIME" => "36000",
+                            "PAGER_SHOW_ALL" => "N",
+                            "SET_BROWSER_TITLE" => "Y",
+                            "SET_META_KEYWORDS" => "Y",
+                            "SET_META_DESCRIPTION" => "Y"
+                        )
+                    );?>
+                    <div id="karaoke-text">
+                        <div id="text-inner">
+                            <?$APPLICATION->IncludeComponent(
+                                "bitrix:main.include",
+                                "",
+                                Array(
+                                )
+                            );?>
+                        </div>
+                    </div>
+				</div>
         <div class="page-heading page-heading--outer">
           <div class="page-inner justify-alignment">
-            <div class="justify-item justify-item--middle">
-				<?$APPLICATION->IncludeComponent(
-					"bitrix:breadcrumb",
-					"",
-					Array(
-						"START_FROM" => "1",
-						"PATH" => "",
-						"SITE_ID" => "s1"
-					)
-				);?>	              
+           <div class="justify-item justify-item--middle">
+				<ul itemprop="breadcrumb" class="page-heading-breadcrumbs page-heading-breadcrumbs--small"><li class="page-heading-breadcrumb-item page-heading-breadcrumb-item--active"><span class="page-heading-breadcrumb-item-name">Афиша</span></li></ul>	              
             </div>
             <div class="justify-item justify-item--middle"><a href="/subscription/empty.php" data-close="Закрыть" class="ajax-form custom-btn custom-btn--large custom-btn--orange custom-btn--uppercase custom-btn--nowrap"><span class="custom-btn-name">Подписаться</span></a></div>
           </div>

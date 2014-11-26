@@ -188,7 +188,7 @@
                                 <div class="justify-item justify-item--middle">
                                     <h1 itemprop="headline" class="section-heading-header">Афиша</h1>
                                 </div>
-                                <div class="justify-item justify-item--middle"><a href="/event/board/" class="all-afisha custom-btn custom-btn--orange custom-btn--large custom-btn--uppercase custom-btn--nowrap"><span class="custom-btn-name">Афиша на месяц</span></a></div><a href="/subscription/empty.php" data-close="Закрыть" class="ajax-form custom-btn custom-btn--orange custom-btn--large custom-btn--uppercase custom-btn--nowrap"><span class="custom-btn-name">Подписаться</span></a>
+                                <div class="justify-item justify-item--middle"><!--<a href="/event/board/" class="all-afisha custom-btn custom-btn--orange custom-btn--large custom-btn--uppercase custom-btn--nowrap"><span class="custom-btn-name">Афиша на месяц</span></a>--></div><a href="/subscription/empty.php" data-close="Закрыть" class="ajax-form custom-btn custom-btn--orange custom-btn--large custom-btn--uppercase custom-btn--nowrap"><span class="custom-btn-name">Подписаться</span></a>
                             </header>
 							<?$APPLICATION->IncludeComponent("bitrix:news.list", "board_items", array(
 								"IBLOCK_TYPE" => "about",

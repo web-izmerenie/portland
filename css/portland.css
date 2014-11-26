@@ -1056,6 +1056,7 @@ body {
   display: inline-block;
   padding: 0 10px;
   text-decoration: none;
+    margin-right: 60px;
 }
 .custom-btn .custom-btn-name {
   display: block;
@@ -2124,6 +2125,7 @@ body {
   height: 30px;
   background: url("../i/menu_sprite.png") no-repeat -79px -87px;
 }
+
 .cook-cap-icon-before:before,
 .cook-cap-icon-after:after {
   content: '';
@@ -2139,6 +2141,19 @@ body {
 }
 .events-icon-before:before,
 .events-icon-after:after {
+  content: '';
+}
+.karaoke-icon-inner,
+.karaoke-icon-before:before,
+.karaoke-icon-after:after {
+  vertical-align: middle;
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  background: url("../i/karaoke-icon.png") no-repeat center 0;
+}
+.karaoke-icon-before:before,
+.karaoke-icon-after:after {
   content: '';
 }
 .pan-icon-inner,
@@ -5394,4 +5409,19 @@ body {
 .vertical-photo{
     margin-top: 20px;
     text-align: center;
+}
+#karaoke-text{
+    display: block;
+    background: #5a4a42;
+    color: #fff;
+    height: 260px;
+    margin-top: -20px;
+}
+#text-inner{
+    width: 435px;
+    margin: 0 auto;
+    font-size: 16px;
+    font-family: MuseoSansCyrlLight;
+    padding-top: 94px;
+    line-height: 1.5;
 }

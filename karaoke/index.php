@@ -1,6 +1,6 @@
 <?
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
-$APPLICATION->SetTitle("Афиша");
+$APPLICATION->SetTitle("Караоке");
 ?><?
 $nPage = 6;
 if(!$_REQUEST["empty"]){	
@@ -9,7 +9,7 @@ if(!$_REQUEST["empty"]){
 	"board",
 	Array(
 		"IBLOCK_TYPE" => "about",
-		"IBLOCK_ID" => "7",
+		"IBLOCK_ID" => "15",
 		"NEWS_COUNT" => $nPage,
 		"USE_SEARCH" => "N",
 		"USE_RSS" => "N",
@@ -25,7 +25,7 @@ if(!$_REQUEST["empty"]){
 		"SORT_ORDER2" => "ASC",
 		"CHECK_DATES" => "N",
 		"SEF_MODE" => "Y",
-		"SEF_FOLDER" => "/event/board/",
+		"SEF_FOLDER" => "/karaoke/",
 		"AJAX_MODE" => "N",
 		"AJAX_OPTION_JUMP" => "N",
 		"AJAX_OPTION_STYLE" => "N",
@@ -51,7 +51,7 @@ if(!$_REQUEST["empty"]){
 		"BROWSER_TITLE" => "NAME",
 		"DETAIL_ACTIVE_DATE_FORMAT" => "j F Y",
 		"DETAIL_FIELD_CODE" => array("",""),
-		"DETAIL_PROPERTY_CODE" => array("ADV","PHOTO","V_PHOTO"),
+		"DETAIL_PROPERTY_CODE" => array("ADV","PHOTO","V_PHOTO",""),
 		"DETAIL_DISPLAY_TOP_PAGER" => "N",
 		"DETAIL_DISPLAY_BOTTOM_PAGER" => "Y",
 		"DETAIL_PAGER_TITLE" => "Страница",
@@ -70,8 +70,8 @@ if(!$_REQUEST["empty"]){
 		"DISPLAY_PREVIEW_TEXT" => "Y",
 		"USE_SHARE" => "N",
 		"AJAX_OPTION_ADDITIONAL" => "",
-		"SEF_URL_TEMPLATES" => Array("news"=>"","section"=>"","detail"=>"#ELEMENT_ID#/"),
 		"VARIABLE_ALIASES" => Array("news"=>Array(),"section"=>Array(),"detail"=>Array(),),
+		"SEF_URL_TEMPLATES" => Array("news"=>"","section"=>"","detail"=>"#ELEMENT_ID#/"),
 		"VARIABLE_ALIASES" => Array(
 			"news" => Array(),
 			"section" => Array(),
@@ -80,7 +80,7 @@ if(!$_REQUEST["empty"]){
 	)
 );?> <?}?> <?if($_REQUEST["empty"]){
 	$arEventFirstIDs = array();
-	$dbEventFirst = CIBlockElement::GetList(array('ACTIVE_FROM'=>'DESC', 'NAME'=>'ASC'), array('IBLOCK_ID'=>7, 'ACTIVE'=>'Y', "CHECK_PERMISSIONS" => "Y"), false, array('nTopCount'=>$nPage), array('ID'));
+	$dbEventFirst = CIBlockElement::GetList(array('ACTIVE_FROM'=>'DESC', 'NAME'=>'ASC'), array('IBLOCK_ID'=>15, 'ACTIVE'=>'Y', "CHECK_PERMISSIONS" => "Y"), false, array('nTopCount'=>$nPage), array('ID'));
 	if($dbEventFirst->SelectedRowsCount()){
 		while($arEventFirst = $dbEventFirst->Fetch()){
 			$arEventFirstIDs[] = $arEventFirst['ID'];
@@ -94,7 +94,7 @@ if(!$_REQUEST["empty"]){
 	"board",
 	Array(
 		"IBLOCK_TYPE" => "about",
-		"IBLOCK_ID" => "7",
+		"IBLOCK_ID" => "15",
 		"NEWS_COUNT" => $nPage,
 		"USE_SEARCH" => "N",
 		"USE_RSS" => "N",
@@ -102,15 +102,15 @@ if(!$_REQUEST["empty"]){
 		"USE_CATEGORIES" => "N",
 		"USE_FILTER" => "Y",
 		"FILTER_NAME" => "arrFilter",
-		"FILTER_FIELD_CODE" => array(0=>"",1=>"",),
-		"FILTER_PROPERTY_CODE" => array(0=>"",1=>"",),
+		"FILTER_FIELD_CODE" => array("",""),
+		"FILTER_PROPERTY_CODE" => array("",""),
 		"SORT_BY1" => "ACTIVE_FROM",
 		"SORT_ORDER1" => "DESC",
 		"SORT_BY2" => "NAME",
 		"SORT_ORDER2" => "ASC",
 		"CHECK_DATES" => "N",
 		"SEF_MODE" => "Y",
-		"SEF_FOLDER" => "/event/board/",
+		"SEF_FOLDER" => "/karaoke/",
 		"AJAX_MODE" => "N",
 		"AJAX_OPTION_JUMP" => "N",
 		"AJAX_OPTION_STYLE" => "N",
@@ -127,16 +127,16 @@ if(!$_REQUEST["empty"]){
 		"USE_PERMISSIONS" => "N",
 		"PREVIEW_TRUNCATE_LEN" => "",
 		"LIST_ACTIVE_DATE_FORMAT" => "j F Y",
-		"LIST_FIELD_CODE" => array(0=>"",1=>"",),
-		"LIST_PROPERTY_CODE" => array(0=>"",1=>"",),
+		"LIST_FIELD_CODE" => array("",""),
+		"LIST_PROPERTY_CODE" => array("",""),
 		"HIDE_LINK_WHEN_NO_DETAIL" => "N",
 		"DISPLAY_NAME" => "Y",
 		"META_KEYWORDS" => "-",
 		"META_DESCRIPTION" => "-",
 		"BROWSER_TITLE" => "NAME",
 		"DETAIL_ACTIVE_DATE_FORMAT" => "j F Y",
-		"DETAIL_FIELD_CODE" => array(0=>"",1=>"",),
-		"DETAIL_PROPERTY_CODE" => array(0=>"ADV",1=>"PHOTO",2=>"",),
+		"DETAIL_FIELD_CODE" => array("",""),
+		"DETAIL_PROPERTY_CODE" => array("ADV","PHOTO",""),
 		"DETAIL_DISPLAY_TOP_PAGER" => "N",
 		"DETAIL_DISPLAY_BOTTOM_PAGER" => "Y",
 		"DETAIL_PAGER_TITLE" => "Страница",
@@ -155,8 +155,8 @@ if(!$_REQUEST["empty"]){
 		"DISPLAY_PREVIEW_TEXT" => "Y",
 		"USE_SHARE" => "N",
 		"AJAX_OPTION_ADDITIONAL" => "",
-		"SEF_URL_TEMPLATES" => array("news"=>"","section"=>"","detail"=>"#ELEMENT_ID#/",),
 		"VARIABLE_ALIASES" => Array("news"=>Array(),"section"=>Array(),"detail"=>Array(),),
+		"SEF_URL_TEMPLATES" => Array("news"=>"","section"=>"","detail"=>"#ELEMENT_ID#/"),
 		"VARIABLE_ALIASES" => Array(
 			"news" => Array(),
 			"section" => Array(),
@@ -165,7 +165,7 @@ if(!$_REQUEST["empty"]){
 	)
 );?> <?
 }
-?> <? if($APPLICATION->GetCurPageParam() == '/event/board/'){ ?>
+?> <? if($APPLICATION->GetCurPageParam() == '/karaoke/'){ ?>
 <div id="right-column-board">
 	 <?$APPLICATION->IncludeComponent(
 	"bitrix:news.list",
