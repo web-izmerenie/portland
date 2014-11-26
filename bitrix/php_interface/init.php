@@ -96,7 +96,7 @@ class SubscribeHandlers
     }
 }
 session_start(); 
-if ($_SESSION['lastvisit'] && $_SESSION['lastvisit']+(3600) < time()) {
+if (!isset($_SESSION['lastvisit']) || $_SESSION['lastvisit'] && $_SESSION['lastvisit']+(3600) < time()) {
 	CSaleBasket::DeleteAll(CSaleBasket::GetBasketUserID());
 }
 $_SESSION['lastvisit'] = time();

@@ -258,6 +258,7 @@ body {
 .page-inner {
   margin: 0 auto;
   padding: 0 140px 0 160px;
+    position: relative;
 }
 @media screen and (max-width: 1400px) {
   .page-inner {
@@ -3953,25 +3954,39 @@ body {
 .ajax-pager--invisible {
   visibility: hidden;
 }
+@media screen and (max-width: 1350px) {
+    .board {
+        width: 70% !important;
+    }
+    #special-offer{
+        right: 3% !important;
+        top:145px !important;
+    }
+    #soc_block, #right-column-board{
+        right: 3% !important;
+    }
+    #right-column-board #special-offer{
+        top:0 !important;
+    }
+}
+@media screen and (max-width: 1010px) {
+    .board {
+        width: 77% !important;
+    }
+    
+}
 .board {
   font-size: 0;
+    width: 77%;
 }
 .board .grid-sizer {
-  width: 22%;
+  width: 250px;
 }
-@media screen and (max-width: 1300px) {
-  .board .grid-sizer {
-    width: 30%;
-  }
-}
+
 .board .gutter-sizer {
-  width: 4%;
+  width: 5%;
 }
-@media screen and (max-width: 1300px) {
-  .board .gutter-sizer {
-    width: 5%;
-  }
-}
+
 .board .board-item-holder {
   vertical-align: top;
   display: inline-block;
@@ -4030,7 +4045,7 @@ body {
   display: block;
 }
 .board .board-item .board-item-inner .board-item-info {
-  padding: 0 35px 20px 35px;
+  padding: 0px 15px 20px;
 }
 @media screen and (max-width: 1400px) {
   .board .board-item .board-item-inner .board-item-info {
@@ -4719,7 +4734,9 @@ body {
 .event-page-slider-holder {
   float: left;
   width: 40%;
-  border: 4px solid #b6a077;
+}
+.event-page-slider-holder .event-page-slider{
+    border: 4px solid #b6a077;
   background-color: #b6a077;
 }
 .event-page-slider-holder .event-page-slider .event-page-slider-item {
@@ -5323,4 +5340,58 @@ body {
 }
 .map-level-1{
 	padding-left:32px;
+}
+#special-offer, #soc_block{
+    background: url(../i/special-offer.png) no-repeat;
+    height: 497px;
+    padding: 15px 15px;
+    width: 251px;
+    position: absolute;
+    right: 11%;
+}
+#special-offer{
+    top: 170px;
+}
+#soc_block{
+    top:702px;
+}
+#facebook-soc{
+    background: #fff;
+}
+.all-afisha{
+    position: relative;
+    top: -22px;
+    right: 15px;
+}
+#right-column-board{
+    position: absolute;
+    right: 11%;
+    top: 0;
+}
+#right-column-board #special-offer{
+    position: relative;
+    top:0;
+    right:0;
+}
+#right-column-board #soc_block{
+    position: relative;
+    top:0;
+    right:0;
+}
+#special-detail{
+    color:#fff;
+    font: 20px/1.4 MuseoSansCyrlLight;
+}
+#special-detail img{
+    margin-right: 15px;
+}
+#special-detail h3{
+    font: 40px/1 CorkiTuscanRegular;
+    color: #FFF;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+.vertical-photo{
+    margin-top: 20px;
+    text-align: center;
 }

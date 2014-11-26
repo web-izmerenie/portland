@@ -144,7 +144,7 @@
 					)
 				);?>	              
             </div>
-            <div class="justify-item justify-item--middle"><a href="/subscription/empty.php" data-close="Закрыть" class="ajax-form custom-btn custom-btn--large custom-btn--orange custom-btn--uppercase custom-btn--nowrap"><span class="custom-btn-name">Подписаться на афишу</span></a></div>
+            <div style="position:relative; right:60px;" class="justify-item justify-item--middle"><a href="/subscription/empty.php" data-close="Закрыть" class="ajax-form custom-btn custom-btn--large custom-btn--orange custom-btn--uppercase custom-btn--nowrap"><span class="custom-btn-name">Подписаться</span></a></div>
           </div>
         </div>
         <div class="page-main">
