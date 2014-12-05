@@ -46,7 +46,14 @@ $aMenuLinks = Array(
 		"Караоке", 
 		"/karaoke/", 
 		Array(), 
-		Array("CLASS"=>"karaoke-icon-before"),
+		Array("CLASS"=>"karaoke-icon-before"), 
+		"" 
+	),
+	Array(
+		"партнеры", 
+		"/partnery/", 
+		Array(), 
+		Array("CLASS"=>"partneri-icon-before"), 
 		"" 
 	)
 );

@@ -12,10 +12,20 @@
 /** @var CBitrixComponent $component */
 $this->setFrameMode(true);
 ?>
+
 <div id="special-detail" class="news-detail">
-	<?if($arParams["DISPLAY_PICTURE"]!="N" && is_array($arResult["DETAIL_PICTURE"])):?>
+	
+	<?if($arParams["DISPLAY_DATE"]!="N" && $arResult["DISPLAY_ACTIVE_FROM"]):?>
+		<span class="news-date-time"><?=$arResult["DISPLAY_ACTIVE_FROM"]?></span>
+	<?endif;?>
+	<?if($arParams["DISPLAY_NAME"]!="N" && $arResult["NAME"]):?>
+		<div class="title"><?=$arResult["NAME"]?></div>
+	<?endif;?>
+    <div class="detail_picture">
+<?if($arParams["DISPLAY_PICTURE"]!="N" && is_array($arResult["DETAIL_PICTURE"])):?>
+    
 		<img
-			class="detail_picture"
+			
 			border="0"
 			src="<?=$arResult["DETAIL_PICTURE"]["SRC"]?>"
 			width="<?=$arResult["DETAIL_PICTURE"]["WIDTH"]?>"
@@ -24,12 +34,7 @@ $this->setFrameMode(true);
 			title="<?=$arResult["DETAIL_PICTURE"]["TITLE"]?>"
 			/>
 	<?endif?>
-	<?if($arParams["DISPLAY_DATE"]!="N" && $arResult["DISPLAY_ACTIVE_FROM"]):?>
-		<span class="news-date-time"><?=$arResult["DISPLAY_ACTIVE_FROM"]?></span>
-	<?endif;?>
-	<?if($arParams["DISPLAY_NAME"]!="N" && $arResult["NAME"]):?>
-		<h3><?=$arResult["NAME"]?></h3>
-	<?endif;?>
+</div>
 	<?if($arParams["DISPLAY_PREVIEW_TEXT"]!="N" && $arResult["FIELDS"]["PREVIEW_TEXT"]):?>
 		<p><?=$arResult["FIELDS"]["PREVIEW_TEXT"];unset($arResult["FIELDS"]["PREVIEW_TEXT"]);?></p>
 	<?endif;?>

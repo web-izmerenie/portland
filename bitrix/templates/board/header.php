@@ -45,8 +45,9 @@
         <!--CSS-->
         <link rel="stylesheet" type="text/css" media="screen" href="http://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.2/owl.carousel.min.css"/>
         <link rel="stylesheet" type="text/css" media="screen" href="http://fotorama.s3.amazonaws.com/4.5.2/fotorama.css"/>
-        <link rel="stylesheet" type="text/css" media="screen" href="http://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css"/>
-        <link rel="stylesheet" type="text/css" media="screen" href="/css/portland.css?v=807268"/>
+        <link rel="stylesheet" type="text/css" media="screen" href="http://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css"/>		
+		<link rel="stylesheet" type="text/css" media="screen" href="/css/jquery.formstyler.css?v=807268"/>
+		<link rel="stylesheet" type="text/css" media="screen" href="/css/portland.css?v=807268"/>        
         <!--//CSS-->
         <!--Scripts-->
         <script type="text/javascript" src="/js/vendor/modernizr-2.8.2.min.js"></script>
@@ -130,7 +131,7 @@
 			)
 		);?>
       </header>
-      <main itemscope itemprop="mainContentOfPage" class="page-content">
+      <main itemscope itemprop="mainContentOfPage" class="page-content" style="min-height: 1300px;">
         <div class="page-heading page-heading--outer">
           <div class="page-inner justify-alignment">
             <div class="justify-item justify-item--middle">
@@ -144,8 +145,66 @@
 					)
 				);?>	              
             </div>
-            <div class="justify-item justify-item--middle"><a href="/subscription/empty.php" data-close="Закрыть" class="ajax-form custom-btn custom-btn--large custom-btn--orange custom-btn--uppercase custom-btn--nowrap"><span class="custom-btn-name">Подписаться</span></a></div>
+            <div class="justify-item justify-item--middle">
+				<a href="?current_month=1" data-close="Закрыть" class="custom-btn custom-btn--large custom-btn--orange custom-btn--uppercase custom-btn--nowrap custom-btn--board"><span class="custom-btn-name">Афиша на месяц</span></a>
+				<a href="/subscription/empty.php" data-close="Закрыть" class="ajax-form custom-btn custom-btn--large custom-btn--orange custom-btn--uppercase custom-btn--nowrap custom-btn--board"><span class="custom-btn-name">Подписаться</span></a>
+			</div>
           </div>
         </div>
         <div class="page-main">
-          <div class="page-inner">                                    
+          <div class="page-inner">
+<? if($APPLICATION->GetCurPageParam() != '/event/spetsialnoe-predlozhenie/'){ ?>
+<div id="right-column-board">
+	 <?$APPLICATION->IncludeComponent(
+	"bitrix:news.list",
+	"special_offer",
+	Array(
+		"IBLOCK_TYPE" => "about",
+		"IBLOCK_ID" => "14",
+		"NEWS_COUNT" => "1",
+		"SORT_BY1" => "ACTIVE_FROM",
+		"SORT_ORDER1" => "",
+		"SORT_BY2" => "",
+		"SORT_ORDER2" => "",
+		"FILTER_NAME" => "",
+		"FIELD_CODE" => array("",""),
+		"PROPERTY_CODE" => array("",""),
+		"CHECK_DATES" => "Y",
+		"DETAIL_URL" => "/event/spetsialnoe-predlozhenie/",
+		"AJAX_MODE" => "N",
+		"AJAX_OPTION_JUMP" => "N",
+		"AJAX_OPTION_STYLE" => "Y",
+		"AJAX_OPTION_HISTORY" => "N",
+		"CACHE_TYPE" => "A",
+		"CACHE_TIME" => "36000000",
+		"CACHE_FILTER" => "N",
+		"CACHE_GROUPS" => "Y",
+		"PREVIEW_TRUNCATE_LEN" => "",
+		"ACTIVE_DATE_FORMAT" => "",
+		"SET_TITLE" => "N",
+		"SET_BROWSER_TITLE" => "N",
+		"SET_META_KEYWORDS" => "N",
+		"SET_META_DESCRIPTION" => "N",
+		"SET_STATUS_404" => "N",
+		"INCLUDE_IBLOCK_INTO_CHAIN" => "N",
+		"ADD_SECTIONS_CHAIN" => "N",
+		"HIDE_LINK_WHEN_NO_DETAIL" => "N",
+		"PARENT_SECTION" => "",
+		"PARENT_SECTION_CODE" => "",
+		"INCLUDE_SUBSECTIONS" => "Y",
+		"DISPLAY_DATE" => "N",
+		"DISPLAY_NAME" => "Y",
+		"DISPLAY_PICTURE" => "Y",
+		"DISPLAY_PREVIEW_TEXT" => "N",
+		"PAGER_TEMPLATE" => "",
+		"DISPLAY_TOP_PAGER" => "N",
+		"DISPLAY_BOTTOM_PAGER" => "N",
+		"PAGER_TITLE" => "Новости",
+		"PAGER_SHOW_ALWAYS" => "N",
+		"PAGER_DESC_NUMBERING" => "N",
+		"PAGER_DESC_NUMBERING_CACHE_TIME" => "36000",
+		"PAGER_SHOW_ALL" => "Y"
+	)
+);?> <?CMain::IncludeFile('/inc/inc_social.php');?>
+</div>
+			  <? } ?>

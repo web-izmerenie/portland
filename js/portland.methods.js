@@ -140,7 +140,11 @@ app.methods.content = (function() {
 					gutter: ".gutter-sizer"
 				}
 			});
-
+			
+			$(document)
+				.on('change', '.board-filter select', function(){
+					$(this).parents('form').submit();
+				})
 		},
 
 		initPageNavigation: function() {
