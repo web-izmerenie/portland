@@ -14,7 +14,7 @@ $APPLICATION->SetTitle("Партнеры");
 		"SORT_ORDER2" => "",
 		"FILTER_NAME" => "",
 		"FIELD_CODE" => array("",""),
-		"PROPERTY_CODE" => array("",""),
+		"PROPERTY_CODE" => array("LINK",""),
 		"CHECK_DATES" => "Y",
 		"DETAIL_URL" => "",
 		"AJAX_MODE" => "N",

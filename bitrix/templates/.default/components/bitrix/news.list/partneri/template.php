@@ -43,7 +43,6 @@ $this->setFrameMode(true);
 					height="<?=$arItem["PREVIEW_PICTURE"]["HEIGHT"]?>"
 					alt="<?=$arItem["PREVIEW_PICTURE"]["ALT"]?>"
 					title="<?=$arItem["PREVIEW_PICTURE"]["TITLE"]?>"
-					style="float:left"
 					/>
 			<?endif;?>
 		<?endif?>
@@ -57,6 +56,14 @@ $this->setFrameMode(true);
 				<p><?echo $arItem["NAME"]?></p>
 			<?endif;?>
 		<?endif;?>
+        <?if($arParams["DISPLAY_NAME"]!="N" && $arItem["NAME"]):?>
+			<?if(!$arParams["HIDE_LINK_WHEN_NO_DETAIL"] || ($arItem["DETAIL_TEXT"] && $arResult["USER_HAVE_ACCESS"])):?>
+				<a href="<?echo $arItem["DETAIL_PAGE_URL"]?>"><b><?echo $arItem["NAME"]?></b></a><br />
+			<?else:?>
+        <a href="<?echo $arItem["DISPLAY_PROPERTIES"]["LINK"]["VALUE"] ?>"><?echo $arItem["NAME"]?></a>
+           
+			<?endif;?>
+		<?endif;?>
 		<?if($arParams["DISPLAY_PREVIEW_TEXT"]!="N" && $arItem["PREVIEW_TEXT"]):?>
 			<?echo $arItem["PREVIEW_TEXT"];?>
 		<?endif;?>
@@ -68,16 +75,7 @@ $this->setFrameMode(true);
 			<?=GetMessage("IBLOCK_FIELD_".$code)?>:&nbsp;<?=$value;?>
 			</small><br />
 		<?endforeach;?>
-		<?foreach($arItem["DISPLAY_PROPERTIES"] as $pid=>$arProperty):?>
-			<small>
-			<?=$arProperty["NAME"]?>:&nbsp;
-			<?if(is_array($arProperty["DISPLAY_VALUE"])):?>
-				<?=implode("&nbsp;/&nbsp;", $arProperty["DISPLAY_VALUE"]);?>
-			<?else:?>
-				<?=$arProperty["DISPLAY_VALUE"];?>
-			<?endif?>
-			</small><br />
-		<?endforeach;?>
+		
 	</div>
 <?endforeach;?>
 <?if($arParams["DISPLAY_BOTTOM_PAGER"]):?>

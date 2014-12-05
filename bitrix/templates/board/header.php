@@ -153,7 +153,7 @@
         </div>
         <div class="page-main">
           <div class="page-inner">
-<? if($APPLICATION->GetCurPageParam() != '/event/spetsialnoe-predlozhenie/'){ ?>
+
 <div id="right-column-board">
 	 <?$APPLICATION->IncludeComponent(
 	"bitrix:news.list",
@@ -207,4 +207,4 @@
 	)
 );?> <?CMain::IncludeFile('/inc/inc_social.php');?>
 </div>
-			  <? } ?>
+

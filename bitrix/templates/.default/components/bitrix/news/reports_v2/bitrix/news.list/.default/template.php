@@ -6,7 +6,7 @@ if($_REQUEST['empty']){
 }
 ?>
 <?if(!$_REQUEST['empty']){?>
-<div id="cont2" class="board has-masonry"><!--noindex-->
+<div id="cont1" class="board has-masonry"><!--noindex-->
 	<div class="grid-sizer"></div>
 	<div class="gutter-sizer"></div><!--noindex--> 
 <?}?>

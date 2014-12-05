@@ -4269,7 +4269,7 @@ body {
   }
 }
 .reviews-page .page-main .page-main-holder .page-main-content {
-  width: 100%;
+  width: 61%;
 }
 .reviews-page .page-main .page-main-holder .page-main-aside {
   width: 29%;
@@ -5457,7 +5457,6 @@ body {
 }
 #soc_block{
     top: 771px;
-	padding: 9px 15px 15px;
 	
 }
 #facebook-soc{
@@ -5580,10 +5579,21 @@ body {
 }
 .partneri-item p{
     margin: 0px !important;
-    color: rgb(184, 158, 117);
+    color: #B89E75;
     font-size: 35px;
     font-family: CorkiTuscanRegular;
+    display: table-cell;
+    height: 76px;
+    vertical-align: middle;
 }
-#cont2{
+
+.partneri-item a{
+    display: block;
+    text-align: center;
+    font-size: 15px;
+    color: #B89E75;
+    margin-top: 10px;
+}
+.partneri-page .page-main .page-main-holder .page-main-content{
     width: 100%;
 }

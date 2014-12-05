@@ -53,7 +53,9 @@
         <!--//Sripts-->
         <?$APPLICATION->ShowHead()?>	
     </head>
-    <body itemscope itemtype="http://schema.org/WebPage" class="reviews-page">
+    
+    <body itemscope itemtype="http://schema.org/WebPage" class="<?if($APPLICATION->GetCurPage() == '/reviews'){?>reviews-page<?}
+                                                               else{?>partneri-page<?}?>">
         <?$APPLICATION->ShowPanel();?>
         <div style="<?$APPLICATION->ShowProperty("page_styles")?>" class="page">
             <header itemscope itemtype="http://schema.org/WebPage" id="page-header" class="page-header">
