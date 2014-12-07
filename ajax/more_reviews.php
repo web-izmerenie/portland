@@ -6,7 +6,6 @@ $json = array("status" => "error");
 if (empty($_GET['page']) || empty($_GET['count'])) {
     $json["error_code"] = "required_params";
     $json["params"] = array("page", "count");
-    
 }
 
 if (!$json['error_code'] && (!is_numeric($_GET['page']) || !is_numeric($_GET['count']))) {
@@ -14,7 +13,6 @@ if (!$json['error_code'] && (!is_numeric($_GET['page']) || !is_numeric($_GET['co
     $json["params"] = array();
     if (!is_numeric($_GET['page'])) $json['params'][] = 'page';
     if (!is_numeric($_GET['count'])) $json['params'][] = 'count';
-    
 }
 
 if (!$json['error_code']) {
