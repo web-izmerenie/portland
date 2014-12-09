@@ -140,7 +140,15 @@ app.methods.content = (function() {
 					gutter: ".gutter-sizer"
 				}
 			});
-
+			
+			$(document)
+				.on('change', '.board-filter select', function(){
+					$(this).parents('form').submit();
+				})
+				
+			if($('.board-filter').is('div')){	
+				$('.board-filter select').styler();	
+			}
 		},
 
 		initPageNavigation: function() {
@@ -227,7 +235,7 @@ app.methods.content = (function() {
 					// Текущее открытое под-меню
 					subMenuOpened = $subMenu.data("index");
 					curOpenSubmenu = $subMenu;
-				}, 0);
+				}, 350);
 
 			});
 
@@ -251,7 +259,7 @@ app.methods.content = (function() {
 						$subMenu.removeClass(rmClass);
 						curCloseSubmenu = false;
 						subMenuOpened = false;
-					}, 0);
+					}, 350);
 				}
 
 
@@ -324,14 +332,15 @@ app.methods.content = (function() {
 					url: $link.attr("href"),
 					type: "GET",
 					success: function(html) {
+						$link.removeClass("ajax-pager-link--loading");
+						$link.parent().remove();
+						
 						if($container.hasClass("has-masonry")) {
 							$container.isotope("insert", $(html));
 						} else {
 							$container.append(html);
-						}
+						}						
 						
-						$link.removeClass("ajax-pager-link--loading");
-						$link.remove();
 						checkScrollPager();
 					}
 				});

@@ -1,0 +1,6 @@
+<?
+$sSectionName = "Караоке";
+$arDirProperties = Array(
+
+);
+?>

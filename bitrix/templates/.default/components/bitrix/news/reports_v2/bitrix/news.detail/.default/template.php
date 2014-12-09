@@ -45,7 +45,7 @@ if($arResult["DETAIL_PICTURE"]["SRC"]){
 			?>
 			
 			<?if(!$_REQUEST['empty']){?>
-				<div id="cont1" class="gallery">
+				<div id="cont1" class="gallery" style="width:100% !important">
 			<?}?>
 			<div class="justify-alignment">
 			<?

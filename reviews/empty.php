@@ -7,7 +7,7 @@ if($_REQUEST['ADD_REVIEWS']){
 	$arField = array(
 		'NAME' => $_REQUEST['name'],
 		'PREVIEW_TEXT' => $_REQUEST['text'],
-		'ACTIVE' => 'N',
+		'ACTIVE' => 'Y',
 		'IBLOCK_ID' => 4,
 		'DATE_ACTIVE_FROM' => ConvertTimeStamp(time()+CTimeZone::GetOffset(), 'FULL'),
 		'PROPERTY_VALUES' => array(

@@ -3,10 +3,36 @@ require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 $APPLICATION->SetTitle("Афиша");
 ?>
 <?
-$nPage = 10;
+global $arrFilter;
+if($_REQUEST['SET_FILTER'] || $_REQUEST['current_month']){
+	if($_REQUEST['year']){
+		$arrFilter['year'] = $_REQUEST['year'];
+	}
+	if($_REQUEST['month']){
+		$arrFilter['month'] = $_REQUEST['month'];
+	}
+	if($_REQUEST['current_month']){
+		$arrFilter['month'] = (int)date('m');
+		$arrFilter['year'] = (int)date('Y');
+	}
+	if($arrFilter['month'] && $arrFilter['year']){
+		$arrFilter['LOGIC'] = 'AND';
+		$arrFilter['>=DATE_ACTIVE_FROM'] = ConvertTimeStamp(mktime(0, 0, 0, $arrFilter['month'], 1, $arrFilter['year']),"FULL");
+		$arrFilter['<=DATE_ACTIVE_FROM'] = ConvertTimeStamp(mktime(23, 59, 59, $arrFilter['month']+1, 0, $arrFilter['year']),"FULL");
+	}else if($arrFilter['year']){
+		$arrFilter['LOGIC'] = 'AND';
+		$arrFilter['>=DATE_ACTIVE_FROM'] = ConvertTimeStamp(mktime(0, 0, 0, 1, 1, $arrFilter['year']),"FULL");
+		$arrFilter['<=DATE_ACTIVE_FROM'] = ConvertTimeStamp(mktime(23, 59, 59, 1, 0, $arrFilter['year']+1),"FULL");
+	}
+}
+?>
+<?
+$nPage = 6;
 if(!$_REQUEST["empty"]){	
-	?>
-	<?$APPLICATION->IncludeComponent("bitrix:news", "board", array(
+	?> <?$APPLICATION->IncludeComponent(
+	"bitrix:news",
+	"board",
+	Array(
 		"IBLOCK_TYPE" => "about",
 		"IBLOCK_ID" => "7",
 		"NEWS_COUNT" => $nPage,
@@ -16,14 +42,8 @@ if(!$_REQUEST["empty"]){
 		"USE_CATEGORIES" => "N",
 		"USE_FILTER" => "Y",
 		"FILTER_NAME" => "arrFilter",
-		"FILTER_FIELD_CODE" => array(
-			0 => "",
-			1 => "",
-		),
-		"FILTER_PROPERTY_CODE" => array(
-			0 => "",
-			1 => "",
-		),
+		"FILTER_FIELD_CODE" => array("",""),
+		"FILTER_PROPERTY_CODE" => array("",""),
 		"SORT_BY1" => "ACTIVE_FROM",
 		"SORT_ORDER1" => "DESC",
 		"SORT_BY2" => "NAME",
@@ -47,29 +67,16 @@ if(!$_REQUEST["empty"]){
 		"USE_PERMISSIONS" => "N",
 		"PREVIEW_TRUNCATE_LEN" => "",
 		"LIST_ACTIVE_DATE_FORMAT" => "j F Y",
-		"LIST_FIELD_CODE" => array(
-			0 => "",
-			1 => "",
-		),
-		"LIST_PROPERTY_CODE" => array(
-			0 => "",
-			1 => "",
-		),
+		"LIST_FIELD_CODE" => array("",""),
+		"LIST_PROPERTY_CODE" => array("SPECIAL",""),
 		"HIDE_LINK_WHEN_NO_DETAIL" => "N",
 		"DISPLAY_NAME" => "Y",
 		"META_KEYWORDS" => "-",
 		"META_DESCRIPTION" => "-",
 		"BROWSER_TITLE" => "NAME",
 		"DETAIL_ACTIVE_DATE_FORMAT" => "j F Y",
-		"DETAIL_FIELD_CODE" => array(
-			0 => "",
-			1 => "",
-		),
-		"DETAIL_PROPERTY_CODE" => array(
-			0 => "ADV",
-			1 => "PHOTO",
-			2 => "",
-		),
+		"DETAIL_FIELD_CODE" => array("",""),
+		"DETAIL_PROPERTY_CODE" => array("ADV","PHOTO","V_PHOTO"),
 		"DETAIL_DISPLAY_TOP_PAGER" => "N",
 		"DETAIL_DISPLAY_BOTTOM_PAGER" => "Y",
 		"DETAIL_PAGER_TITLE" => "Страница",
@@ -88,28 +95,34 @@ if(!$_REQUEST["empty"]){
 		"DISPLAY_PREVIEW_TEXT" => "Y",
 		"USE_SHARE" => "N",
 		"AJAX_OPTION_ADDITIONAL" => "",
-		"SEF_URL_TEMPLATES" => array(
-			"news" => "",
-			"section" => "",
-			"detail" => "#ELEMENT_ID#/",
+		"SEF_URL_TEMPLATES" => Array("news"=>"","section"=>"","detail"=>"#ELEMENT_ID#/"),
+		"VARIABLE_ALIASES" => Array("news"=>Array(),"section"=>Array(),"detail"=>Array(),),
+		"VARIABLE_ALIASES" => Array(
+			"news" => Array(),
+			"section" => Array(),
+			"detail" => Array(),
 		)
-		),
-		false
-	);?>
-<?}?>	
-<?if($_REQUEST["empty"]){
+	)
+);?> <?}?> <?if($_REQUEST["empty"]){
 	$arEventFirstIDs = array();
-	$dbEventFirst = CIBlockElement::GetList(array('ACTIVE_FROM'=>'DESC', 'NAME'=>'ASC'), array('IBLOCK_ID'=>7, 'ACTIVE'=>'Y', "CHECK_PERMISSIONS" => "Y"), false, array('nTopCount'=>$nPage), array('ID'));
+	$arFilterFirst = array('IBLOCK_ID'=>7, 'ACTIVE'=>'Y');
+	if(count($arrFilter)){
+		$arFilterResult = array_merge($arFilterFirst, $arrFilter);
+	}else{
+		$arFilterResult = $arFilterFirst;
+	}
+	$dbEventFirst = CIBlockElement::GetList(array('active_from'=>'desc'), $arFilterResult, false, array('nTopCount'=>$nPage), array('ID', 'IBLOCK_ID'));
 	if($dbEventFirst->SelectedRowsCount()){
 		while($arEventFirst = $dbEventFirst->Fetch()){
 			$arEventFirstIDs[] = $arEventFirst['ID'];
 		}
 	}
-	global $arrFilter;
-	$arrFilter = array('!ID' => $arEventFirstIDs);
-	$nPage = 4;
-	?>
-	<?$APPLICATION->IncludeComponent("bitrix:news", "board", array(
+	$arrFilter['!ID'] = $arEventFirstIDs;
+	$nPage = 3;
+	?> <?$APPLICATION->IncludeComponent(
+	"bitrix:news",
+	"board",
+	Array(
 		"IBLOCK_TYPE" => "about",
 		"IBLOCK_ID" => "7",
 		"NEWS_COUNT" => $nPage,
@@ -119,14 +132,8 @@ if(!$_REQUEST["empty"]){
 		"USE_CATEGORIES" => "N",
 		"USE_FILTER" => "Y",
 		"FILTER_NAME" => "arrFilter",
-		"FILTER_FIELD_CODE" => array(
-			0 => "",
-			1 => "",
-		),
-		"FILTER_PROPERTY_CODE" => array(
-			0 => "",
-			1 => "",
-		),
+		"FILTER_FIELD_CODE" => array(0=>"",1=>"",),
+		"FILTER_PROPERTY_CODE" => array(0=>"",1=>"",),
 		"SORT_BY1" => "ACTIVE_FROM",
 		"SORT_ORDER1" => "DESC",
 		"SORT_BY2" => "NAME",
@@ -150,29 +157,16 @@ if(!$_REQUEST["empty"]){
 		"USE_PERMISSIONS" => "N",
 		"PREVIEW_TRUNCATE_LEN" => "",
 		"LIST_ACTIVE_DATE_FORMAT" => "j F Y",
-		"LIST_FIELD_CODE" => array(
-			0 => "",
-			1 => "",
-		),
-		"LIST_PROPERTY_CODE" => array(
-			0 => "",
-			1 => "",
-		),
+		"LIST_FIELD_CODE" => array(0=>"",1=>"",),
+		"LIST_PROPERTY_CODE" => array(0=>"SPECIAL",1=>"",),
 		"HIDE_LINK_WHEN_NO_DETAIL" => "N",
 		"DISPLAY_NAME" => "Y",
 		"META_KEYWORDS" => "-",
 		"META_DESCRIPTION" => "-",
 		"BROWSER_TITLE" => "NAME",
 		"DETAIL_ACTIVE_DATE_FORMAT" => "j F Y",
-		"DETAIL_FIELD_CODE" => array(
-			0 => "",
-			1 => "",
-		),
-		"DETAIL_PROPERTY_CODE" => array(
-			0 => "ADV",
-			1 => "PHOTO",
-			2 => "",
-		),
+		"DETAIL_FIELD_CODE" => array(0=>"",1=>"",),
+		"DETAIL_PROPERTY_CODE" => array(0=>"ADV",1=>"PHOTO",2=>"",),
 		"DETAIL_DISPLAY_TOP_PAGER" => "N",
 		"DETAIL_DISPLAY_BOTTOM_PAGER" => "Y",
 		"DETAIL_PAGER_TITLE" => "Страница",
@@ -191,15 +185,14 @@ if(!$_REQUEST["empty"]){
 		"DISPLAY_PREVIEW_TEXT" => "Y",
 		"USE_SHARE" => "N",
 		"AJAX_OPTION_ADDITIONAL" => "",
-		"SEF_URL_TEMPLATES" => array(
-			"news" => "",
-			"section" => "",
-			"detail" => "#ELEMENT_ID#/",
+		"SEF_URL_TEMPLATES" => array("news"=>"","section"=>"","detail"=>"#ELEMENT_ID#/",),
+		"VARIABLE_ALIASES" => Array("news"=>Array(),"section"=>Array(),"detail"=>Array(),),
+		"VARIABLE_ALIASES" => Array(
+			"news" => Array(),
+			"section" => Array(),
+			"detail" => Array(),
 		)
-		),
-		false
-	);?>
-	<?
+	)
+);?> <?
 }
-?>
-<?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>
+?><?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>

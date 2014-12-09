@@ -1,4 +1,4 @@
-﻿          </div>
+          </div>
         </div>
       </main>
     </div>
@@ -94,6 +94,7 @@
 	<script type="text/javascript" src="/js/vendor/placeholders.min.js"></script>
 	<script type="text/javascript" src="http://yandex.st/share/share.js"></script>
 	<script type="text/javascript" src="/js/vendor/jquery.form.min.js"></script>
+	<script type="text/javascript" src="/js/vendor/jquery.formstyler.js"></script>
 	<script type="text/javascript" src="/js/portland.base.js"></script>
 	<!--//Sripts-->
 	<!--JS settings-->
@@ -101,7 +102,8 @@
 			'SITE_PATH': '/',
 			'SITE_JS_PATH': '/js',
 			'SITE_IMAGES_PATH': '/i',
-			'SITE_UPLOAD_PATH': '/dummy', });</script>
+			'SITE_UPLOAD_PATH': '/dummy', });			
+</script>
 	<!--//JS settings-->
 	<!--Scripts-->
 	<script type="text/javascript" src="/js/portland.methods.js"></script>

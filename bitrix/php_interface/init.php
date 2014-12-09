@@ -1,5 +1,7 @@
 <?
 CModule::IncludeModule("iblock");
+CModule::IncludeModule("sale");
+CModule::IncludeModule("catalog");
 function p($array){
 	echo '<pre>';
 	print_r($array);
@@ -93,4 +95,10 @@ class SubscribeHandlers
         return $arFields;
     }
 }
+session_start(); 
+if (!isset($_SESSION['lastvisit']) || $_SESSION['lastvisit'] && $_SESSION['lastvisit']+(3600) < time()) {
+	CSaleBasket::DeleteAll(CSaleBasket::GetBasketUserID());
+}
+$_SESSION['lastvisit'] = time();
+
 ?>

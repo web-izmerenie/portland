@@ -26,9 +26,9 @@ if($arResult["DETAIL_PICTURE"]["SRC"]){
   <div class="page-main">
 	<div class="page-inner">
 	  <div class="page-main-holder">
-		<?if(count($arResult['DISPLAY_PROPERTIES']['PHOTO']['VALUE'])){?>
+		<?if(count($arResult['DISPLAY_PROPERTIES']['PHOTO']['VALUE']) || count($arResult['DISPLAY_PROPERTIES']['V_PHOTO']['VALUE'])){?>
 			<div class="event-page-slider-holder">
-			  <div class="event-page-slider">		
+			  <div class="event-page-slider">
 				<?foreach($arResult['DISPLAY_PROPERTIES']['PHOTO']['VALUE'] as $key=>$arPhotoID){?>
 					<?
 					$arPhoto = CFile::ResizeImageGet($arPhotoID, array('width'=>633, 'height'=>423), BX_RESIZE_IMAGE_EXACT, true);
@@ -36,6 +36,10 @@ if($arResult["DETAIL_PICTURE"]["SRC"]){
 					<div class="event-page-slider-item"><img src="<?=$arPhoto['src']?>" alt="<?=(strlen($arResult['DISPLAY_PROPERTIES']['PHOTO']['DESCRIPTION'][$key]) > 0 ? $arResult['DISPLAY_PROPERTIES']['PHOTO']['DESCRIPTION'][$key] : $arResult['NAME'])?>" itemprop="image" width="633" height="423" class="event-page-slider-item-photo"></div>
 				<?}?>						
 			  </div>
+                <? if(count($arResult['DISPLAY_PROPERTIES']['V_PHOTO']['VALUE'])){ ?>
+                <? $vPhoto = CFile::ResizeImageGet($arResult['DISPLAY_PROPERTIES']['V_PHOTO']['FILE_VALUE'], array('width'=>520, 'height'=>800), BX_RESIZE_IMAGE_EXACT, true);?>
+                <div class="vertical-photo"><img src="<?=$vPhoto['src']?>"></div>
+                <?}?>
 			</div>
 		<?}?>
 		<div itemprop="description" class="event-page-content page-text">

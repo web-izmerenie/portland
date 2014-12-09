@@ -41,6 +41,20 @@ $aMenuLinks = Array(
 		Array(), 
 		Array("CLASS"=>"compass-icon-before"), 
 		"" 
+	),
+	Array(
+		"Караоке", 
+		"/karaoke/", 
+		Array(), 
+		Array("CLASS"=>"karaoke-icon-before"), 
+		"" 
+	),
+	Array(
+		"партнеры", 
+		"/partnery/", 
+		Array(), 
+		Array("CLASS"=>"partneri-icon-before"), 
+		"" 
 	)
 );
 ?>

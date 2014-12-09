@@ -24,6 +24,12 @@ $arUrlRewrite = array(
 		"ID" => "bitrix:catalog",
 		"PATH" => "/catalog/index.php",
 	),
+	array(
+		"CONDITION" => "#^/karaoke/#",
+		"RULE" => "",
+		"ID" => "bitrix:news",
+		"PATH" => "/karaoke/index.php",
+	),
 );
 
 ?>

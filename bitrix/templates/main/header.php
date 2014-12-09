@@ -45,6 +45,7 @@
         <link rel="stylesheet" type="text/css" media="screen" href="http://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.2/owl.carousel.min.css"/>
         <link rel="stylesheet" type="text/css" media="screen" href="http://fotorama.s3.amazonaws.com/4.5.2/fotorama.css"/>
         <link rel="stylesheet" type="text/css" media="screen" href="http://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css"/>
+		<link rel="stylesheet" type="text/css" media="screen" href="/css/jquery.formstyler.css?v=807268"/>
         <link rel="stylesheet" type="text/css" media="screen" href="/css/portland.css?v=807268"/>
         <!--//CSS-->
         <!--Scripts-->
@@ -181,24 +182,53 @@
 						"PAGER_SHOW_ALL" => "N"
 					)
 				);?>
-                <div class="home-content">
-                    <div id="home-board" class="home-board">
+                <div class="home-content"><a name="board"></a>
+                    <div id="home-board" class="home-board" style="min-height:1212px;">
                         <div class="page-inner">
                             <header class="section-heading justify-alignment">
                                 <div class="justify-item justify-item--middle">
                                     <h1 itemprop="headline" class="section-heading-header">Афиша</h1>
                                 </div>
-                                <div class="justify-item justify-item--middle"><a href="/subscription/empty.php" data-close="Закрыть" class="ajax-form custom-btn custom-btn--orange custom-btn--large custom-btn--uppercase custom-btn--nowrap"><span class="custom-btn-name">Подписаться на афишу</span></a></div>
+                                <div class="justify-item justify-item--middle">
+									<!--<a href="/event/board/" class="all-afisha custom-btn custom-btn--orange custom-btn--large custom-btn--uppercase custom-btn--nowrap"><span class="custom-btn-name">Афиша на месяц</span></a>-->
+									<a href="index.php?current_month=1#board" data-close="Закрыть" class="custom-btn custom-btn--large custom-btn--orange custom-btn--uppercase custom-btn--nowrap custom-btn--board"><span class="custom-btn-name">Афиша на месяц</span></a>
+									<a href="/subscription/empty.php" data-close="Закрыть" class="ajax-form custom-btn custom-btn--large custom-btn--orange custom-btn--uppercase custom-btn--nowrap custom-btn--board"><span class="custom-btn-name">Подписаться</span></a>
+								</div>
+								<?/*<a href="/subscription/empty.php" data-close="Закрыть" class="ajax-form custom-btn custom-btn--orange custom-btn--large custom-btn--uppercase custom-btn--nowrap"><span class="custom-btn-name">Подписаться</span></a>*/?>
                             </header>
+							<?
+							global $arrFilter;
+							if($_REQUEST['SET_FILTER'] || $_REQUEST['current_month']){
+								if($_REQUEST['year']){
+									$arrFilter['year'] = $_REQUEST['year'];
+								}
+								if($_REQUEST['month']){
+									$arrFilter['month'] = $_REQUEST['month'];
+								}
+								if($_REQUEST['current_month']){
+									$arrFilter['month'] = (int)date('m');
+									$arrFilter['year'] = (int)date('Y');
+								}
+								if($arrFilter['month'] && $arrFilter['year']){
+									$arrFilter['LOGIC'] = 'AND';
+									$arrFilter['>=DATE_ACTIVE_FROM'] = ConvertTimeStamp(mktime(0, 0, 0, $arrFilter['month'], 1, $arrFilter['year']),"FULL");
+									$arrFilter['<=DATE_ACTIVE_FROM'] = ConvertTimeStamp(mktime(23, 59, 59, $arrFilter['month']+1, 0, $arrFilter['year']),"FULL");
+								}else if($arrFilter['year']){
+									$arrFilter['LOGIC'] = 'AND';
+									$arrFilter['>=DATE_ACTIVE_FROM'] = ConvertTimeStamp(mktime(0, 0, 0, 1, 1, $arrFilter['year']),"FULL");
+									$arrFilter['<=DATE_ACTIVE_FROM'] = ConvertTimeStamp(mktime(23, 59, 59, 1, 0, $arrFilter['year']+1),"FULL");
+								}
+							}
+							?>
 							<?$APPLICATION->IncludeComponent("bitrix:news.list", "board_items", array(
 								"IBLOCK_TYPE" => "about",
 								"IBLOCK_ID" => "7",
-								"NEWS_COUNT" => "8",
+								"NEWS_COUNT" => "6",
 								"SORT_BY1" => "ACTIVE_FROM",
 								"SORT_ORDER1" => "DESC",
 								"SORT_BY2" => "NAME",
 								"SORT_ORDER2" => "ASC",
-								"FILTER_NAME" => "",
+								"FILTER_NAME" => "arrFilter",
 								"FIELD_CODE" => array(
 									0 => "",
 									1 => "",
@@ -243,6 +273,60 @@
 								),
 								false
 							);?>
+                            
+                                 <?$APPLICATION->IncludeComponent(
+                                "bitrix:news.list",
+                                "special_offer",
+                                Array(
+                                    "IBLOCK_TYPE" => "about",
+                                    "IBLOCK_ID" => "14",
+                                    "NEWS_COUNT" => "1",
+                                    "SORT_BY1" => "ACTIVE_FROM",
+                                    "SORT_ORDER1" => "",
+                                    "SORT_BY2" => "",
+                                    "SORT_ORDER2" => "",
+                                    "FILTER_NAME" => "",
+                                    "FIELD_CODE" => array("",""),
+                                    "PROPERTY_CODE" => array("",""),
+                                    "CHECK_DATES" => "Y",
+                                    "DETAIL_URL" => "/event/spetsialnoe-predlozhenie/",
+                                    "AJAX_MODE" => "N",
+                                    "AJAX_OPTION_JUMP" => "N",
+                                    "AJAX_OPTION_STYLE" => "Y",
+                                    "AJAX_OPTION_HISTORY" => "N",
+                                    "CACHE_TYPE" => "A",
+                                    "CACHE_TIME" => "36000000",
+                                    "CACHE_FILTER" => "N",
+                                    "CACHE_GROUPS" => "Y",
+                                    "PREVIEW_TRUNCATE_LEN" => "",
+                                    "ACTIVE_DATE_FORMAT" => "",
+                                    "SET_TITLE" => "N",
+                                    "SET_BROWSER_TITLE" => "N",
+                                    "SET_META_KEYWORDS" => "N",
+                                    "SET_META_DESCRIPTION" => "N",
+                                    "SET_STATUS_404" => "N",
+                                    "INCLUDE_IBLOCK_INTO_CHAIN" => "N",
+                                    "ADD_SECTIONS_CHAIN" => "N",
+                                    "HIDE_LINK_WHEN_NO_DETAIL" => "N",
+                                    "PARENT_SECTION" => "",
+                                    "PARENT_SECTION_CODE" => "",
+                                    "INCLUDE_SUBSECTIONS" => "Y",
+                                    "DISPLAY_DATE" => "N",
+                                    "DISPLAY_NAME" => "Y",
+                                    "DISPLAY_PICTURE" => "Y",
+                                    "DISPLAY_PREVIEW_TEXT" => "N",
+                                    "PAGER_TEMPLATE" => "",
+                                    "DISPLAY_TOP_PAGER" => "N",
+                                    "DISPLAY_BOTTOM_PAGER" => "N",
+                                    "PAGER_TITLE" => "Новости",
+                                    "PAGER_SHOW_ALWAYS" => "N",
+                                    "PAGER_DESC_NUMBERING" => "N",
+                                    "PAGER_DESC_NUMBERING_CACHE_TIME" => "36000",
+                                    "PAGER_SHOW_ALL" => "Y"
+                                )
+                            );?>
+                            <?CMain::IncludeFile('/inc/inc_social.php');?>
+
                         </div>
                     </div>
 					<?$APPLICATION->IncludeComponent("bitrix:news.list", "home_video", array(
