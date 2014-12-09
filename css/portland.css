@@ -3998,45 +3998,7 @@ body {
 .ajax-pager--invisible {
   visibility: hidden;
 }
-@media screen and (max-width: 1300px) {
-	#special-offer, #soc_block{
-		right: 3% !important;
-	}
-	#cont1{
-		width: 85% !important;
-	}
-    #cont2{
-        width: 100% !important;
-    }
-	.gutter-sizer{
-		width: 3% !important;
-	}
-	#special-offer{
-		top:152px !important;
-	}
-	#soc_block{
-		top:756px !important;
-	}
-	#right-column-board #special-offer{
-		top:18px !important;
-	}
-	#right-column-board #soc_block{
-		top:621px !important;
-	}
-	.karaoke_right #special-offer{
-		top: 10px !important;
-	}
-		
-}
-@media screen and (max-width: 1277px) {
-    #cont1{
-        width: 77% !important;
-    }
-    #cont2{
-        width: 100% !important;
-    }
-    
-}
+
 #cont1{
   font-size: 0;
     width: 77%;
@@ -4261,6 +4223,7 @@ body {
 .board .board-item.board-item-special:after{
 	background:url(/dummy/special-offer/label-bg.jpg) #8b2925;
 }
+
 /*.board .board-item:hover .board-item-inner {
   background-color: #fff;
 }
@@ -5468,10 +5431,10 @@ body {
     right: 5%;
 }
 #special-offer{
-    top: 184px;
+    top:199px;
 }
 #soc_block{
-    top: 771px;
+    top: 803px;
 	
 }
 #facebook-soc{
@@ -5582,6 +5545,45 @@ body {
 }
 #karaoke-afisha .page-content{
     min-height: 2000px;
+}
+@media screen and (max-width: 1300px) {
+	#special-offer, #soc_block{
+		right: 1%;
+	}
+	#cont1{
+		width: 85%;
+	}
+    #cont2{
+        width: 100%;
+    }
+	.gutter-sizer{
+		width: 3% ;
+	}
+	#special-offer{
+		top:184px;
+	}
+	#soc_block{
+		top:788px;
+	}
+	#right-column-board #special-offer{
+		top:18px;
+	}
+	#right-column-board #soc_block{
+		top:621px;
+	}
+	.karaoke_right #special-offer{
+		top: 10px;
+	}
+		
+}
+@media screen and (max-width: 1277px) {
+    #cont1{
+        width: 77%;
+    }
+    #cont2{
+        width: 100%;
+    }
+    
 }
 .partneri-item{
     display: inline-block;
