@@ -28,7 +28,7 @@
 <div class="iv-embed" style="margin:0 auto;padding:0;border:0;width:642px;"><div class="iv-v" style="display:block;margin:0;padding:1px;border:0;background:#000;"><iframe class="iv-i" style="display:block;margin:0;padding:0;border:0;" src="//open.ivideon.com/embed/v2/?server=100-69005c6d1f98081e69b6a9dab7acc868&amp;camera=0&amp;width=&amp;height=&amp;lang=ru" width="640" height="360" frameborder="0" allowfullscreen></iframe></div><div class="iv-b" style="display:block;margin:0;padding:0;border:0;"><div style="float:right;text-align:right;padding:0 0 10px;line-height:10px;"><a class="iv-a" style="font:10px Verdana,sans-serif;color:inherit;opacity:.6;" href="http://www.ivideon.com/" target="_blank">powered by Ivideon</a></div><div style="clear:both;height:0;overflow:hidden;">&nbsp;</div><script src="//open.ivideon.com/embed/v2/embedded.js"></script></div></div>
 <br>
 <p align="center">
-<iframe frameborder="0" width="480" height="270" src="//www.dailymotion.com/embed/video/x28scl8" allowfullscreen></iframe><br /><a href="http://www.dailymotion.com/video/x28scl8_portland_music" target="_blank">Portland</a> <i>   <a href="http://www.dailymotion.com/portland_art" target="_blank">portland_art</a></i>
+<iframe frameborder="0" width="480" height="270" src="//www.dailymotion.com/embed/video/x2ar7ba" allowfullscreen></iframe><br /><a href="http://www.dailymotion.com/video/x2ar7ba_showtime_creation" target="_blank">Showtime</a> <i>   <a href="http://www.dailymotion.com/portland_art" target="_blank">portland_art</a></i>
 </p>
 		</div>
 	</div>

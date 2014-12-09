@@ -1,1 +1,1 @@
-<img alt="Портленд" class="page-main-aside-photo" src="../dummy/about/portland.jpg" height="382" width="341">
+<img width="341" src="../dummy/about/portland.png" height="382" alt="Портленд" class="page-main-aside-photo">

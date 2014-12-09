@@ -6,7 +6,7 @@ $APPLICATION->AddChainItem("О ресторане");
 <blockquote>
 <strong>
 <p>
-111.
+
 </p>
 </strong>
 </blockquote>
