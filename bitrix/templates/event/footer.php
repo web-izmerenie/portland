@@ -92,6 +92,7 @@
 	<script type="text/javascript" src="/js/vendor/placeholders.min.js"></script>
 	<script type="text/javascript" src="http://yandex.st/share/share.js"></script>
 	<script type="text/javascript" src="/js/vendor/jquery.form.min.js"></script>
+	<script type="text/javascript" src="/js/vendor/jquery.formstyler.js"></script>
 	<script type="text/javascript" src="/js/portland.base.js"></script>
 	<!--//Sripts-->
 	<!--JS settings-->

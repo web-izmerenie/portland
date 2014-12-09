@@ -6,6 +6,9 @@
 	Was used: Stylus, Nib, Grunt
 **************************************************/
 
+a{
+    color:#DDBE8C;
+}
 .icon-text {
   vertical-align: middle;
   display: inline-block;
@@ -3999,9 +4002,12 @@ body {
 	#special-offer, #soc_block{
 		right: 3% !important;
 	}
-	.board{
+	#cont1{
 		width: 85% !important;
 	}
+    #cont2{
+        width: 100% !important;
+    }
 	.gutter-sizer{
 		width: 3% !important;
 	}
@@ -4023,14 +4029,23 @@ body {
 		
 }
 @media screen and (max-width: 1277px) {
-    .board {
+    #cont1{
         width: 77% !important;
+    }
+    #cont2{
+        width: 100% !important;
     }
     
 }
-.board {
+#cont1{
   font-size: 0;
     width: 77%;
+}
+#cont2{
+    width: 100%;
+}
+#cont2 .board-item-holder{
+    width: 250px;
 }
 .board .grid-sizer {
   width: 250px;
@@ -4718,9 +4733,9 @@ body {
   width: 18%;
 }
 @media screen and (max-width: 1300px) {
-  .gallery .gallery-item-holder {
+  /*.gallery .gallery-item-holder {
     width: 22%;
-  }
+  }*/
 }
 .gallery .gallery-item-holder .gallery-item {
   position: relative;
@@ -5422,7 +5437,7 @@ body {
     -webkit-filter: grayscale(100%);
 }
 .board-filter a{
-	color:#fff;
+	color:#b89e75;
 	line-height:26px;
 }
 .page-footer-copyrights{
@@ -5453,7 +5468,7 @@ body {
     right: 5%;
 }
 #special-offer{
-    top: 167px;
+    top: 184px;
 }
 #soc_block{
     top: 771px;

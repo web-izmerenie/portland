@@ -102,8 +102,7 @@
 			'SITE_PATH': '/',
 			'SITE_JS_PATH': '/js',
 			'SITE_IMAGES_PATH': '/i',
-			'SITE_UPLOAD_PATH': '/dummy', });
-			$('.board-filter select').styler();
+			'SITE_UPLOAD_PATH': '/dummy', });			
 </script>
 	<!--//JS settings-->
 	<!--Scripts-->
