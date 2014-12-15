@@ -34,6 +34,11 @@
 									<dd class="contacs-item-workhours-value"><?=$arItem["DISPLAY_PROPERTIES"]['TIME']['DESCRIPTION'][$key]?></dd>									
 								<?}?>
 							</dl>
+                            <span style="margin-top:20px" class="contacts-item-title">Караоке:</span>
+                            <dl class="contacs-item-workhours">
+							     <dt class="contacs-item-workhours-name">чт-сб</dt>
+							     <dd class="contacs-item-workhours-value">с 20:00 до 03:00</dd>
+                            </dl>
 							<?foreach($arItem["DISPLAY_PROPERTIES"]['META_TIME']['VALUE'] as $key=>$value){?>
 								<meta itemprop="openingHours" content="<?=$value?>">
 							<?}?>						
