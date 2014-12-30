@@ -13,6 +13,41 @@ $aMenuLinks = Array(
 		Array(), 
 		Array(), 
 		"" 
+	),
+	Array(
+		"Кухня", 
+		"/about/kitchen.php", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"Территория", 
+		"/about/concept.php", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"Сцена", 
+		"/about/scene.php", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"Персонал", 
+		"/about/personal.php", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"Караоке бар", 
+		"/about/karaoke.php", 
+		Array(), 
+		Array(), 
+		"" 
 	)
 );
 ?>

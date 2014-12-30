@@ -1,6 +1,6 @@
 <?
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
-$APPLICATION->SetTitle("Специальное предложение");
+$APPLICATION->SetTitle("Караоке бар Papa Joe");
 ?><?$APPLICATION->IncludeComponent(
 	"bitrix:news.detail",
 	"special-offer",
@@ -35,7 +35,7 @@ $APPLICATION->SetTitle("Специальное предложение");
 		"USE_PERMISSIONS" => "N",
 		"DISPLAY_DATE" => "N",
 		"DISPLAY_NAME" => "Y",
-		"DISPLAY_PICTURE" => "Y",
+		"DISPLAY_PICTURE" => "N",
 		"DISPLAY_PREVIEW_TEXT" => "N",
 		"USE_SHARE" => "N",
 		"PAGER_TEMPLATE" => "",

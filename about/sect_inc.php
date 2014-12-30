@@ -1,6 +1,6 @@
 <p style="text-align: center;">
  <strong>
-	Арт-шоу ресторан "Portland" - это</strong>
+	Арт-шоу ресторан "Portland" - ЭТО</strong>
 </p>
 <p style="line-height:0.7; margin-left:80px">
 	 не Театр!

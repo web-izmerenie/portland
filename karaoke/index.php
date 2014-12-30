@@ -1,8 +1,7 @@
 <?
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 $APPLICATION->SetTitle("Караоке");
-?>
-<?
+?><?
 global $arrFilter;
 if($_REQUEST['SET_FILTER'] || $_REQUEST['current_month']){
 	if($_REQUEST['year']){

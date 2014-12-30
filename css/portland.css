@@ -4655,6 +4655,8 @@ body {
   color: #fff;
   letter-spacing: 3px;
   text-align: center;
+  width: 90%;
+  margin: 0 auto;
 }
 .event-page-heading .event-page-heading-name .event-page-heading-name-main {
   font-size: 90px;

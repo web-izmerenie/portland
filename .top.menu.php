@@ -22,6 +22,13 @@ $aMenuLinks = Array(
 		"" 
 	),
 	Array(
+		"Караоке", 
+		"/karaoke/", 
+		Array(), 
+		Array("CLASS"=>"karaoke-icon-before"), 
+		"" 
+	),
+	Array(
 		"Виртуальный тур", 
 		"/tour/", 
 		Array(), 
@@ -36,24 +43,17 @@ $aMenuLinks = Array(
 		"" 
 	),
 	Array(
+		"Партнеры", 
+		"/partnery/", 
+		Array(), 
+		Array("CLASS"=>"partneri-icon-before"), 
+		"" 
+	),
+	Array(
 		"Контакты", 
 		"/#contacts", 
 		Array(), 
 		Array("CLASS"=>"compass-icon-before"), 
-		"" 
-	),
-	Array(
-		"Караоке", 
-		"/karaoke/", 
-		Array(), 
-		Array("CLASS"=>"karaoke-icon-before"), 
-		"" 
-	),
-	Array(
-		"партнеры", 
-		"/partnery/", 
-		Array(), 
-		Array("CLASS"=>"partneri-icon-before"), 
 		"" 
 	)
 );
