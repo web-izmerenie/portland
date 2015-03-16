@@ -1,4 +1,4 @@
-﻿<?
+<?
 if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)die();
 IncludeTemplateLangFile(__FILE__);
 ?>
@@ -90,7 +90,7 @@ IncludeTemplateLangFile(__FILE__);
         <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
         <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?key=AIzaSyDMJfb274yP35aQlI2rTASmL_-q2ZqZZpU&amp;amp;sensor=true"></script>
         <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.2/owl.carousel.min.js"></script>
-        <script type="text/javascript" src="http://fotorama.s3.amazonaws.com/4.5.2/fotorama.js"></script>
+        <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/fotorama/4.5.2/fotorama.js"></script>
         <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/2.0.0/isotope.pkgd.min.js"></script>
         <script type="text/javascript" src="/js/vendor/cells-by-column.js"></script>
         <script type="text/javascript" src="/js/vendor/social.min.js"></script>

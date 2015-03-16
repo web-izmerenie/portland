@@ -47,7 +47,7 @@
 			<link rel="stylesheet" type="text/css" media="screen, print" href="/css/portland_print.css?v=259056"/>
 		<?}else{?>
 			<link rel="stylesheet" type="text/css" media="screen" href="http://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.2/owl.carousel.min.css"/>
-			<link rel="stylesheet" type="text/css" media="screen" href="http://fotorama.s3.amazonaws.com/4.5.2/fotorama.css"/>
+			<link rel="stylesheet" type="text/css" media="screen" href="http://cdnjs.cloudflare.com/ajax/libs/fotorama/4.5.2/fotorama.css"/>
 			<link rel="stylesheet" type="text/css" media="screen" href="http://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css"/>
 			<link rel="stylesheet" type="text/css" media="screen" href="/css/portland.css?v=807268"/>
 		<?}?>

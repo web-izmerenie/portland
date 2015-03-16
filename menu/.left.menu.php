@@ -1,22 +1,29 @@
 <?
 $aMenuLinks = Array(
 	Array(
-		"Меню", 
-		"/catalog/", 
-		Array(), 
-		Array(), 
-		"" 
-	),
-	Array(
-		"Основное меню", 
-		"http://www.tihiy-don.ru/images/portland/menu/MenuPortland.pdf", 
+		"Весеннее меню", 
+		"http://www.portlandshow.ru/menu/Menu-03.15.pdf", 
 		Array(), 
 		Array(), 
 		"" 
 	),
 	Array(
 		"Барная карта", 
-		"http://www.tihiy-don.ru/images/portland/menu/MenuPortlandBar.pdf", 
+		"http://www.portlandshow.ru/menu/Bar-03.15.pdf", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"Винная карта", 
+		"http://www.portlandshow.ru/menu/Vine-03.15.pdf", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"Каталог товаров", 
+		"/catalog/", 
 		Array(), 
 		Array(), 
 		"" 

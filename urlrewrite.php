@@ -19,16 +19,16 @@ $arUrlRewrite = array(
 		"PATH" => "/event/board/index.php",
 	),
 	array(
-		"CONDITION" => "#^/catalog/#",
-		"RULE" => "",
-		"ID" => "bitrix:catalog",
-		"PATH" => "/catalog/index.php",
-	),
-	array(
 		"CONDITION" => "#^/karaoke/#",
 		"RULE" => "",
 		"ID" => "bitrix:news",
 		"PATH" => "/karaoke/index.php",
+	),
+	array(
+		"CONDITION" => "#^/catalog/#",
+		"RULE" => "",
+		"ID" => "bitrix:catalog",
+		"PATH" => "/catalog/index.php",
 	),
 );
 
