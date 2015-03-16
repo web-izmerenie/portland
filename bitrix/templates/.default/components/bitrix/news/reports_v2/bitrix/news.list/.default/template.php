@@ -44,7 +44,7 @@ if($_REQUEST['empty']){
 		</a></div>			
 	<?endforeach;?>
 	<?if(!$_REQUEST['empty']){?>
-		<div class="ajax-pager ajax-pager--invisible"><a href="?empty=1<?=($_REQUEST['video'] ? '&video=1' : NULL)?>" data-container="cont1" class="ajax-pager-link custom-btn custom-btn--orange custom-btn--large custom-btn--uppercase custom-btn--nowrap"><span class="custom-btn-name">Показать еще</span></a></div>
+		<div class="ajax-pager ajax-pager--invisible"><a href="?empty=1<?=($_REQUEST['video'] ? '&video=1' : NULL)?>" data-container="cont2" class="ajax-pager-link custom-btn custom-btn--orange custom-btn--large custom-btn--uppercase custom-btn--nowrap"><span class="custom-btn-name">Показать еще</span></a></div>
 	<?}else{?>
 		<?=$arResult["NAV_STRING"]?>
 	<?}?>	
