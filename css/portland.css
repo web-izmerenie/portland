@@ -3920,6 +3920,9 @@ body {
   display: block;
   width: 100%;
 }
+#reviews_form .custom-form-item input[name="bot"]{
+	display: none;
+}
 ::-webkit-input-placeholder {
   color: #5a4a42;
 }

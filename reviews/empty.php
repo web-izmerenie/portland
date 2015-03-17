@@ -47,6 +47,9 @@ if($_REQUEST['ADD_REVIEWS']){
 		<?if(count($arError)){?>
 			<div class="custom-form-item custom-form-item--message" style="color:red;"><?=show_error($arError)?></div>
 		<?}?>
+	  	<div class="custom-form-item">
+		  <input type="text" name="bot" placeholder="bot" autocorrect="off" maxlength="100" class="custom-form-item-text">
+		</div>
 		<div class="custom-form-item custom-form-item--required">
 		  <input type="text" name="name" placeholder="Имя" required="required" name="" autocorrect="off" maxlength="100" class="custom-form-item-text">
 		</div>

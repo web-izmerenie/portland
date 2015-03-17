@@ -906,16 +906,21 @@ app.methods.forms = (function() {
 					});
 					return false;
 				})
-				.on('submit', '.reviews-form-holder form', function(){
-					$(this).ajaxSubmit({
-						cache	: false,
-						url		: $(this).attr('action'),
-						data	: $(this).serializeArray(),
-						success : function(data){
-							$('.reviews-form-holder').html(data);
-						}
-					});
-					return false;	
+				.on('submit', '.reviews-form-holder form', function(e){
+					if($('#reviews_form input[name="bot"]').val() != ''){
+						e.preventDefault();
+						return false;
+					}else{
+						$(this).ajaxSubmit({
+							cache	: false,
+							url		: $(this).attr('action'),
+							data	: $(this).serializeArray(),
+							success : function(data){
+								$('.reviews-form-holder').html(data);
+							}
+						});
+						return false;
+					}					
 				});
 		}
 
