@@ -1,9 +1,9 @@
 /**************************************************
-	Project 'Portland', 2014
-	Last update: 03.10.2014
-	Author: Alexandr Kirikovich, Russia, Rostov-on-Don | www.wemakesites.ru
+    Project 'Portland', 2014
+    Last update: 03.10.2014
+    Author: Alexandr Kirikovich, Russia, Rostov-on-Don | www.wemakesites.ru
 
-	Was used: Stylus, Nib, Grunt
+    Was used: Stylus, Nib, Grunt
 **************************************************/
 
 a{
@@ -374,18 +374,18 @@ body {
   -ms-transition: background-color 0.2s ease-in;
   transition: background-color 0.2s ease-in;
 /*&:hover
-				background-color rgba(68, 57, 52, 0.7)*/
+                background-color rgba(68, 57, 52, 0.7)*/
 }
 @media screen and (max-width: 1400px) {
   .page-header .page-header-inner .page-header-toggler {
     /*margin-bottom: 85px;*/
-	margin-bottom: 25px;
+    margin-bottom: 25px;
   }
 }
 @media screen and (max-width: 1000px) {
   .page-header .page-header-inner .page-header-toggler {
     /*margin-bottom: 50px;*/
-	margin-bottom: 8px;
+    margin-bottom: 8px;
   }
 }
 .page-header .page-header-inner .page-header-toggler .page-header-toggler-inner {
@@ -651,7 +651,7 @@ body {
 }
 .page-header .page-header-social {
   position: absolute;
-  bottom: 50px;
+  bottom: -30px;
   left: 50px;
   visibility: hidden;
   opacity: 0;
@@ -733,13 +733,13 @@ body {
 @media screen and (max-width: 1400px) {
   .page-header--opened .page-header-inner .page-header-logo {
     /*margin-bottom: 91px;*/
-	margin-bottom: 32px;
+    margin-bottom: 32px;
   }
 }
 @media screen and (max-width: 1000px) {
   .page-header--opened .page-header-inner .page-header-logo {
     /*margin-bottom: 51px;*/
-	margin-bottom: 10px;
+    margin-bottom: 10px;
   }
 }
 .page-header--opened .page-header-inner .page-header-logo .page-header-logo-image--large {
@@ -1063,7 +1063,7 @@ body {
 .custom-btn.custom-btn--board {
   padding: 0 10px;
     margin-left: 10px;
-	margin-right:0px;
+    margin-right:0px;
 }
 .custom-btn .custom-btn-name {
   display: block;
@@ -1261,18 +1261,18 @@ body {
     padding: 18px 18px 16px 18px;
     font-size: 15px;
 }
-	.custom-btn--large.custom-btn--board .custom-btn-name {
-  		padding: 18px 0 16px 0;
-	}
+    .custom-btn--large.custom-btn--board .custom-btn-name {
+          padding: 18px 0 16px 0;
+    }
 }
 @media screen and (max-width: 1000px) {
   .custom-btn--large .custom-btn-name {
     padding: 16px 16px 14px 16px;
     font-size: 14px;
   }
-	.custom-btn--large.custom-btn--board .custom-btn-name {
-  		padding: 16px 0 14px 0;
-	}
+    .custom-btn--large.custom-btn--board .custom-btn-name {
+          padding: 16px 0 14px 0;
+    }
 }
 .custom-btn--xlarge .custom-btn-name {
   padding: 20px 60px 19px 60px;
@@ -2388,16 +2388,16 @@ body {
   background-attachment: fixed;
 }
 .home-video-wrapper{
-	width:640px;
-	height:390px;
-	margin:auto;
-	position:relative;
+    width:640px;
+    height:390px;
+    margin:auto;
+    position:relative;
 }
 .home-video-wrapper .event-page-album .fotorama__wrap .fotorama__stage{
-	padding-bottom:3px;
+    padding-bottom:3px;
 }
 .home-video-wrapper .event-page-album .fotorama__wrap .fotorama__stage__frame .fotorama__video-play{
-	margin-top:-48px;
+    margin-top:-48px;
 }
 .home-contacts {
   padding-left: 80px;
@@ -3921,7 +3921,7 @@ body {
   width: 100%;
 }
 #reviews_form .custom-form-item input[name="bot"]{
-	display: none;
+    display: none;
 }
 ::-webkit-input-placeholder {
   color: #5a4a42;
@@ -4054,7 +4054,7 @@ body {
   height: 515px;
 }
 .board .board-item.board-item-special .board-item-inner{
-	background: url(/dummy/special-offer/label-bg.jpg) #8b2925;
+    background: url(/dummy/special-offer/label-bg.jpg) #8b2925;
 }
 .board .board-item.board-item-special .board-item-inner .board-item-date{
     color:#ddbe8c !important;
@@ -4224,7 +4224,7 @@ body {
   transition: background-color 0.2s ease-in;
 }
 .board .board-item.board-item-special:after{
-	background:url(/dummy/special-offer/label-bg.jpg) #8b2925;
+    background:url(/dummy/special-offer/label-bg.jpg) #8b2925;
 }
 
 /*.board .board-item:hover .board-item-inner {
@@ -5372,58 +5372,58 @@ body {
   padding-bottom: 151px;
 }
 .board-filter{
-	position:absolute;
-	height:32px;
-	top:-46px;
-	z-index:1000;
+    position:absolute;
+    height:32px;
+    top:-46px;
+    z-index:1000;
 }
 .board-filter form:after{
-	clear:both;
-	content:"";
-	display:block;
+    clear:both;
+    content:"";
+    display:block;
 }
 .board-filter .item{
-	float:left;
-	margin-right:10px;
+    float:left;
+    margin-right:10px;
 }
 .board-filter .item label{
-	font-size:14px;
-	color:#fff;
+    font-size:14px;
+    color:#fff;
 }
 .board-filter .item select{
-	background-color:#b89e75;
+    background-color:#b89e75;
 }
 .not-found{
-	margin:24px 0;
-	color:#fff;
+    margin:24px 0;
+    color:#fff;
 }
 .board-item-old{
-	filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0\'/></filter></svg>#grayscale");
+    filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0\'/></filter></svg>#grayscale");
     filter: gray;
     -webkit-filter: grayscale(100%);
 }
 .board-filter a{
-	color:#b89e75;
-	line-height:26px;
+    color:#b89e75;
+    line-height:26px;
 }
 .page-footer-copyrights{
-	position:relative;
+    position:relative;
 }
 .innafoto{
-	padding: 0 0 0 28px;
-	position:absolute;
-	top: 22px;
+    padding: 0 0 0 28px;
+    position:absolute;
+    top: 22px;
 }
 .innafoto .camera{
-	width:22px;
-	height:16px;
-	background:url(../i/sprites/camera.png) no-repeat -7px -8px;
-	margin: -2px 0 0 -28px;
-	display: block;
-	position: absolute;
+    width:22px;
+    height:16px;
+    background:url(../i/sprites/camera.png) no-repeat -7px -8px;
+    margin: -2px 0 0 -28px;
+    display: block;
+    position: absolute;
 }
 .map-level-1{
-	padding-left:32px;
+    padding-left:32px;
 }
 #special-offer, #soc_block{
     background: url(../i/special-offer.png) no-repeat;
@@ -5438,11 +5438,11 @@ body {
 }
 #soc_block{
     top: 803px;
-	
+
 }
 #facebook-soc{
     background: #fff;
-	margin-bottom: 5px;
+    margin-bottom: 5px;
 }
 .all-afisha{
     position: relative;
@@ -5451,10 +5451,10 @@ body {
 }
 
 #right-column-board #special-offer{
-	top:17px;
+    top:17px;
 }
 #right-column-board #soc_block{
-	top:621px;
+    top:621px;
 }
 #special-detail{
     color:#fff;
@@ -5489,10 +5489,10 @@ body {
     line-height: 1.5;
 }
 .karaoke_right #special-offer{
-	top:-2px !important;
+    top:-2px !important;
 }
 .karaoke_right #soc_block{
-	top:602px !important;
+    top:602px !important;
 }
 .special-offer-wrap .page-inner h1{
     font-family: CorkiTuscanRegular;
@@ -5550,34 +5550,34 @@ body {
     min-height: 2000px;
 }
 @media screen and (max-width: 1300px) {
-	#special-offer, #soc_block{
-		right: 1%;
-	}
-	#cont1{
-		width: 85%;
-	}
+    #special-offer, #soc_block{
+        right: 1%;
+    }
+    #cont1{
+        width: 85%;
+    }
     #cont2{
         width: 100%;
     }
-	.gutter-sizer{
-		width: 3% ;
-	}
-	#special-offer{
-		top:184px;
-	}
-	#soc_block{
-		top:788px;
-	}
-	#right-column-board #special-offer{
-		top:18px;
-	}
-	#right-column-board #soc_block{
-		top:621px;
-	}
-	.karaoke_right #special-offer{
-		top: 10px;
-	}
-		
+    .gutter-sizer{
+        width: 3% ;
+    }
+    #special-offer{
+        top:184px;
+    }
+    #soc_block{
+        top:788px;
+    }
+    #right-column-board #special-offer{
+        top:18px;
+    }
+    #right-column-board #soc_block{
+        top:621px;
+    }
+    .karaoke_right #special-offer{
+        top: 10px;
+    }
+
 }
 @media screen and (max-width: 1277px) {
     #cont1{
@@ -5586,7 +5586,7 @@ body {
     #cont2{
         width: 100%;
     }
-    
+
 }
 .partneri-item{
     display: inline-block;
