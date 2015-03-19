@@ -1,9 +1,11 @@
 app.methods.content = (function() {
 
 	var loadUrls = {};
-
+	
+	$('#reviews_form .custom-btn').removeAttr('disabled');
+	
 	return {
-
+		
 		/**
 			* Loadier for content
 			* @param {string} src - URL needed to load

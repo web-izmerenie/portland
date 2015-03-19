@@ -63,7 +63,7 @@ if($_REQUEST['ADD_REVIEWS']){
 		  <textarea name="text" placeholder="Текст отзыва" required="required" name="" class="custom-form-item-textarea"></textarea>
 		</div>
 		<div class="custom-form-item custom-form-item--actions">
-		  <button type="submit" class="custom-btn custom-btn--red custom-btn--large custom-btn--uppercase"><span class="custom-btn-name">Оставить отзыв</span></button>
+		  <button type="submit" class="custom-btn custom-btn--red custom-btn--large custom-btn--uppercase" disabled><span class="custom-btn-name">Оставить отзыв</span></button>
 		</div>
 	<?}?>
   </fieldset>
