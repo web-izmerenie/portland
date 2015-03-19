@@ -3921,7 +3921,8 @@ body {
   width: 100%;
 }
 #reviews_form .custom-form-item input[name="bot"]{
-    display: none;
+    opacity: 0;
+    cursor: default;
 }
 ::-webkit-input-placeholder {
   color: #5a4a42;
