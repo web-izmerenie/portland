@@ -1,8 +1,7 @@
 app.methods.content = (function() {
 
 	var loadUrls = {};
-	
-	$('#reviews_form .custom-btn').removeAttr('disabled');
+
 	
 	return {
 		
@@ -909,10 +908,6 @@ app.methods.forms = (function() {
 					return false;
 				})
 				.on('submit', '.reviews-form-holder form', function(e){
-					if($('#reviews_form input[name="bot"]').val() != ''){
-						e.preventDefault();
-						return false;
-					}else{
 						$(this).ajaxSubmit({
 							cache	: false,
 							url		: $(this).attr('action'),
@@ -921,8 +916,7 @@ app.methods.forms = (function() {
 								$('.reviews-form-holder').html(data);
 							}
 						});
-						return false;
-					}					
+						return false;				
 				});
 		}
 
